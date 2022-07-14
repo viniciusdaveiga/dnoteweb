@@ -1,0 +1,68 @@
+#sidebar .just-icon {
+    display: inline-block;
+    width: 15px;
+    height: 15px;
+    background-color: rgb(255, 42, 0);
+}
+
+.extra-options {
+    background: url(/img/chevron-expand.svg) center no-repeat;
+    background-size: contain;
+}
+
+.search-icon {
+    background: url(/img/search.svg) center no-repeat;
+    background-size: contain;
+}
+
+#sidebar .sidebar-button{
+    width: 25px;
+    height: 25px;
+    border: none;
+    background-size: contain;
+    padding: 3px;
+    cursor: pointer;
+    background-origin: content-box;
+    border-radius: 3px;
+    background-color: blue;
+}
+
+#close-sidebar {
+    background: url(/img/chevron-double-left.svg) center no-repeat;
+}
+
+#sort-down {
+    background: url(/img/sort-down.svg) center no-repeat;
+}
+
+#sort-up {
+    background: url(/img/sort-up-alt.svg) center no-repeat;
+}
+
+#filter-settings {
+    background: url(/img/sliders.svg) center no-repeat;
+}
+
+.note-btn-more {
+    background: url(/img/more-horizontal.svg) center no-repeat;
+    width: 25px;
+    height: 20px;
+    border: none;
+    background-size: contain;
+    padding: 3px;
+    cursor: pointer;
+    background-origin: content-box;
+    border-radius: 3px;
+    background-color: rgb(28, 201, 16);
+}
+
+#new-note-icon {
+    background: url(/img/plus-lg.svg) center no-repeat;
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    background-size: contain;
+    padding: 3px;
+    background-origin: content-box;
+    background-color: rgb(201, 192, 16);
+}
