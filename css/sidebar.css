@@ -87,7 +87,6 @@ body.dark .sidebar-top #close-sidebar{
 
 /* ============= Buttons and Icons ============= */
 .btn{
-    background-color: blue;
     display: inline-flex;
     justify-content: center;
     align-items: center;
@@ -265,6 +264,6 @@ body.dark .sidebar-top #close-sidebar{
     margin-top: auto;
 }
 
-#sidebar .sidebar-button:hover{
+#sidebar .btn:hover{
     background-color: #fe875c;
 }
