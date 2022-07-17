@@ -17,6 +17,7 @@
     transform: translateX(-20.5rem);
 }
 
+/* ======================================== SIDEBAR TOP ======================================== */
 #sidebar .sidebar-top{
     cursor: pointer;
     display: flex;
@@ -25,9 +26,20 @@
     padding: 10px;
 }
 
+#sidebar .sidebar-top:hover{
+    background-color: #555;
+}
+
 .logo-text{
+    display: flex;
+    justify-content: center;
+    align-items: center;
     font-family: 'LolliPoptron', Times, serif;
     font-size: 1.3em;
+}
+
+.extra-options {
+    background: url(/img/chevron-expand.svg) center no-repeat;
 }
 
 #close-sidebar{
@@ -42,8 +54,12 @@
     transition: var(--tran-02);
 }
 
-#close-sidebar{
-    filter: invert(90%) sepia(1%) saturate(2717%) hue-rotate(31deg) brightness(95%) contrast(86%);
+#icon-close-sidebar {
+    background: url(/img/chevron-double-left.svg) center no-repeat;
+}
+
+#icon-close-sidebar{
+    filter: invert(40%) sepia(1%) saturate(2717%) hue-rotate(31deg) brightness(95%) contrast(86%);
 }
 
 #close-sidebar:hover{
@@ -54,6 +70,72 @@ body.dark .sidebar-top #close-sidebar{
     color: var(--text-color);
 }
 
+/* ======================================== SEARCH BOX ======================================== */
+.search-icon {
+    background: url(/img/search.svg) center no-repeat;
+    margin: 0 10px;
+}
+
+#sidebar .search-box{
+    height: 60px;
+    list-style: none;
+    display: flex;
+    align-items: center;
+    margin: 10px;
+    border-radius: 6px;
+    background-color: var(--primary-color-light);
+    cursor: pointer;
+    transition: var(--tran-03);
+}
+
+#sidebar .search-box input{
+    height: 100%;
+    width: 100%;
+    outline: none;
+    border: none;
+    background-color: var(--primary-color-light);
+    color: var(--text-color);
+    border-radius: 6px;
+    font-size: 17px;
+    font-weight: 500;
+    transition: var(--tran-03);
+}
+
+/* ======================================== LIST OPTIONS ======================================== */
+.circle {
+    display: inline-block;
+    height: 100%;
+    width: 100%;
+    background-color: rgb(11, 228, 94);
+    border-radius: 50%;
+    border: solid 1.5px;
+}
+
+#icon-sort-down {
+    background: url(/img/sort-down.svg) center no-repeat;
+}
+
+#icon-sort-up {
+    background: url(/img/sort-up-alt.svg) center no-repeat;
+}
+
+#icon-filter-settings {
+    background: url(/img/sliders.svg) center no-repeat;
+}
+
+.list-options{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    border-bottom: solid 2px #f0f2fc;
+}
+
+.list-options-right{
+    display: inline-flex;
+}
+
+/* ======================================== NOTE LIST ======================================== */
 #sidebar .note-list{
     z-index: 1;
     overflow: hidden auto;
@@ -85,65 +167,6 @@ body.dark .sidebar-top #close-sidebar{
     background: #555; 
 }
 
-/* ============= Buttons and Icons ============= */
-.btn{
-    display: inline-flex;
-    justify-content: center;
-    align-items: center;
-    border-radius: 3px;
-}
-
-#sidebar .icon {
-    display: inline-flex;
-    justify-content: center;
-    background-size: contain;
-    background-origin: content-box;
-    width: 25px;
-    height: 25px;
-    padding: 3px;
-    text-align: center;
-}
-
-.logo-text{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-.circle {
-    display: inline-block;
-    height: 100%;
-    width: 100%;
-    background-color: rgb(11, 228, 94);
-    border-radius: 50%;
-    border: solid 1.5px;
-}
-
-.extra-options {
-    background: url(/img/chevron-expand.svg) center no-repeat;
-}
-
-.search-icon {
-    background: url(/img/search.svg) center no-repeat;
-    margin: 0 10px;
-}
-
-#icon-close-sidebar {
-    background: url(/img/chevron-double-left.svg) center no-repeat;
-}
-
-#icon-sort-down {
-    background: url(/img/sort-down.svg) center no-repeat;
-}
-
-#icon-sort-up {
-    background: url(/img/sort-up-alt.svg) center no-repeat;
-}
-
-#icon-filter-settings {
-    background: url(/img/sliders.svg) center no-repeat;
-}
-
 .note-btn-more {
     background: url(/img/more-horizontal.svg) center no-repeat;
     width: 25px;
@@ -158,67 +181,6 @@ body.dark .sidebar-top #close-sidebar{
     top: 10px;
     right: 10px;
     background-color: #69fe5c;
-}
-
-#new-note-icon {
-    background: url(/img/plus-lg.svg) center no-repeat;
-    display: inline-block;
-    width: 25px;
-    height: 25px;
-    background-size: contain;
-    padding: 3px;
-    background-origin: content-box;
-    margin-right: 10px;
-}
-
-/* ================================== */
-
-.list-options{
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 10px;
-    border-bottom: solid 2px #f0f2fc;
-}
-
-.list-options-right{
-    display: inline-flex;
-}
-
-.sort-down, .sort-up, .color-filter, .filter-settings {
-    margin-left: 5px;
-}
-
-#sidebar .search-box{
-    height: 70px;
-    list-style: none;
-    display: flex;
-    align-items: center;
-    margin: 10px;
-    border-radius: 6px;
-    background-color: var(--primary-color-light);
-    cursor: pointer;
-    transition: var(--tran-03);
-}
-
-#sidebar .search-box input{
-    height: 100%;
-    width: 100%;
-    outline: none;
-    border: none;
-    background-color: var(--primary-color-light);
-    color: var(--text-color);
-    border-radius: 6px;
-    font-size: 17px;
-    font-weight: 500;
-    transition: var(--tran-03);
-}
-
-#sidebar .text{
-    font-size: 17px;
-    font-weight: 500;
-    white-space: nowrap;
-    opacity: 1;
 }
 
 .note-item {
@@ -251,6 +213,18 @@ body.dark .sidebar-top #close-sidebar{
     text-align: right;
 }
 
+/* ======================================== NEW NOTE ======================================== */
+#new-note-icon {
+    background: url(/img/plus-lg.svg) center no-repeat;
+    display: inline-block;
+    width: 25px;
+    height: 25px;
+    background-size: contain;
+    padding: 3px;
+    background-origin: content-box;
+    margin-right: 10px;
+}
+
 #sidebar .new-note {
     display: flex;
     align-items: center;
@@ -262,8 +236,4 @@ body.dark .sidebar-top #close-sidebar{
     height: 45px;
     background-color: #69fe5c;
     margin-top: auto;
-}
-
-#sidebar .btn:hover{
-    background-color: #fe875c;
 }

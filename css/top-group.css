@@ -1,0 +1,325 @@
+/* ======================================== TOP BAR ======================================== */
+.top-bar {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    overflow: hidden;
+    height: 45px;
+    position: sticky;
+    top: 0;
+    padding-left: 12px;
+    padding-right: 10px;
+    background-color: var(--sidebar-color);
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.1), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    z-index: 100;
+}
+
+.open-sidebar {
+    flex-shrink: 0;
+    width: 48px;
+    height: 48px;
+    margin-left: 2px;
+    margin-right: 10px;
+    padding: 12px;
+}
+
+.color-e-title {
+    transition: var(--tran-03);
+    margin-left: 260px;
+    display: block;
+    padding: 15px 5px;
+    flex: 1;
+    align-items: center;
+}
+
+.note-title{
+    display: inline-block;
+    width: 50%;
+    font-size: 20px;
+    margin-left: 10px;
+}
+
+.actions {
+    flex-grow: 0;
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    padding-right: 0px;
+    padding-left: 12px;
+    justify-content: space-between;
+    z-index: 101;
+    height: 45px;
+}
+
+.actions > * {
+    margin-left: 1rem;
+}
+
+.toggle-toolbar {
+    padding-left: 6px;
+    padding-right: 3px;
+}
+.icon-toggle-toolbar--up {
+    background: url(/img/chevron-up.svg) center no-repeat;
+}
+.icon-toggle-toolbar--down {
+    background: url(/img/chevron-down.svg) center no-repeat;
+}
+
+#icon-more-horizontal {
+    background: url(/img/more-horizontal.svg) center no-repeat;
+}
+
+/* ======================================== TOOLBAR ======================================== */
+/* Hide scrollbar for Chrome, Safari and Opera */
+#top-toolbar::-webkit-scrollbar {
+    display: none;
+}
+/* Hide scrollbar for IE, Edge add Firefox */
+#top-toolbar {
+    -ms-overflow-style: none;
+    scrollbar-width: none; /* Firefox */
+}
+#top-toolbar {
+    border-bottom: solid 1px rgb(1, 1, 1, 0.2);
+    display: flex;
+    width: 100%;
+    height: 40px;
+    position: sticky;
+    top: 0;
+    border-top: solid 1px rgb(1, 1, 1, 0.2);
+    background-color: var(--sidebar-color);
+    /* box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.1), 0 6px 20px 0 rgba(0, 0, 0, 0.19); */
+    z-index: 101;
+    padding-right: 10px;
+    flex-direction: column;
+    flex-wrap: wrap;
+    overflow: auto hidden;
+    align-items: center;
+}
+
+#toolbar-group{
+    display: flex;
+    margin-right: 10px;
+    width: 980px;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+}
+
+.gp-formats {
+    display: flex;
+    align-items: center;
+}
+
+/* ========== Toolbar components ========== */
+#fontName,#fontSize {
+    height: 25px;
+    border-width: 0px;
+    border: solid 1px rgb(0, 0, 0);
+    border-radius: 3px;
+    outline: 0;
+    cursor: pointer;
+    padding: 3px;
+}
+
+#fontName {
+    width: 143px;
+}
+#fontName:focus{
+    outline: none;
+}
+
+#fontSize {
+    width: 49px;
+}
+#fontSize:focus{
+    outline: none;
+}
+#dropdown-fontSize {
+    position: relative;
+    display: inline-block;
+}
+.content-dropdown-fontSize {
+    display: none;
+    position: fixed;
+    top: 82px;
+    background-color: #f9f9f9;
+    min-width: 49px;
+    border-radius: 3px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 9999;
+}
+.content-dropdown-fontSize > * {
+    color: black;
+    padding: 3px 3px;
+    text-decoration: none;
+    display: block;
+    cursor: pointer;
+}
+.content-dropdown-fontSize > *:hover {
+    background-color: #ddd;
+}
+.show-dropdown-fontSize {
+    display: block;
+}
+
+.toolbar-verticalSeparator{
+    margin: 0 0 0 5px;
+    height: 20px;
+    border-right: solid 2px #f1f1f1;
+}
+
+/* ===== Buttons ===== */
+#icon-bold {
+    background: url(/img/toolbar/type-bold.svg) center no-repeat;
+}
+#icon-italic {
+    background: url(/img/toolbar/type-italic.svg) center no-repeat;
+}
+#icon-underline {
+    background: url(/img/toolbar/type-underline.svg) center no-repeat;
+}
+#icon-strikethrough {
+    background: url(/img/toolbar/type-strikethrough.svg) center no-repeat;
+}
+#icon-superscript {
+    background: url(/img/toolbar/superscript.svg) center no-repeat;
+}
+#icon-subscript {
+    background: url(/img/toolbar/subscript.svg) center no-repeat;
+}
+#icon-eraser {
+    background: url(/img/toolbar/eraser.svg) center no-repeat;
+}
+#icon-quote {
+    background: url(/img/toolbar/quote.svg) center no-repeat;
+}
+#icon-colorText {
+    background: url(/img/toolbar/color-text.svg) center no-repeat;
+}
+#icon-colorFill {
+    background: url(/img/toolbar/color-fill.svg) center no-repeat;
+}
+#icon-unorderedList {
+    background: url(/img/toolbar/list-unordered.svg) center no-repeat;
+}
+#icon-orderedList {
+    background: url(/img/toolbar/list-ordered.svg) center no-repeat;
+}
+#icon-checkList {
+    background: url(/img/toolbar/list-check.svg) center no-repeat;
+}
+#icon-indentLeft {
+    background: url(/img/toolbar/text-indent-left.svg) center no-repeat;
+}
+#icon-indentRight {
+    background: url(/img/toolbar/text-indent-right.svg) center no-repeat;
+}
+.alignText{
+    width: 43px!important;
+}
+#icon-alignText{
+    background: url(/img/toolbar/text-paragraph.svg) right center no-repeat;
+    padding-right: 0!important;
+}
+#icon-dropDown{
+    background: url(/img/arrow-drop-down.svg) left top no-repeat;
+    padding: 0!important;
+}
+.content-dropdown-alignText {
+    display: none;
+    position: fixed;
+    top: 82px;
+    background-color: #f9f9f9;
+    min-width: 43px;
+    border-radius: 3px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 9999;
+}
+.show-dropdown-alignText {
+    display: flex;
+    flex-direction: column;
+}
+#top-group .alignText .btn {
+    margin: 0;
+}
+#icon-alignLeft {
+    background: url(/img/toolbar/text-left.svg) center no-repeat;
+}
+#icon-alignCenter {
+    background: url(/img/toolbar/text-center.svg) center no-repeat;
+}
+#icon-alignRight {
+    background: url(/img/toolbar/text-right.svg) center no-repeat;
+}
+#icon-justify {
+    background: url(/img/toolbar/text-justify.svg) center no-repeat;
+}
+#icon-link {
+    background: url(/img/toolbar/link-45deg.svg) center no-repeat;
+}
+#icon-addPhoto {
+    background: url(/img/toolbar/add-photo.svg) center no-repeat;
+}
+#icon-code {
+    background: url(/img/toolbar/code-slash.svg) center no-repeat;
+}
+#icon-returnLeft {
+    background: url(/img/toolbar/arrow-return-left.svg) center no-repeat;
+}
+#icon-returnRight {
+    background: url(/img/toolbar/arrow-return-right.svg) center no-repeat;
+}
+
+
+/* ========== Fonts ========== */
+#font-arial {
+    font-family: Arial, Helvetica, sans-serif;
+}
+#font-calibri {
+    font-family: Calibri, 'Gill Sans', 'Gill Sans MT', 'Trebuchet MS', sans-serif;
+}
+#font-cambria {
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+#font-courier {
+    font-family: 'Courier New', Courier, monospace;
+}
+#font-cursive {
+    font-family: cursive;
+}
+#font-georgia {
+    font-family: Georgia, 'Times New Roman', Times, serif;
+}
+#font-helvetica {
+    font-family: Helvetica, sans-serif;
+}
+#font-inter {
+    font-family: 'Inter', sans-serif;
+}
+#font-poppins {
+    font-family: 'Poppins', sans-serif;
+}
+#font-roboto {
+    font-family: 'Roboto', sans-serif;
+}
+#font-sans {
+    font-family: sans-serif;
+}
+#font-segoe {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+#font-tahoma {
+    font-family: Tahoma, Geneva, Verdana, sans-serif;
+}
+#font-times {
+    font-family: 'Times New Roman', Times, serif;
+}
+#font-trebuchet {
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+#font-verdana {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}

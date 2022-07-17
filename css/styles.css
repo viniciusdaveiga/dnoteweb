@@ -1,4 +1,9 @@
 @import url("/css/sidebar.css");
+@import url("/css/top-group.css");
+@import url("/css/note-area.css");
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400&family=Poppins:wght@300;400&family=Roboto:wght@300;400&display=swap');
+
 
 * {
     margin: 0;
@@ -44,4 +49,46 @@ body.dark{
     --primary-color-light: #3a3b3c;
     --toggle-color: #fff;
     --text-color: #ccc;
+}
+
+.left{
+    transition: var(--tran-03);
+    margin: 0;
+    max-width: 100%;
+}
+
+.right{
+    margin-left: 0px;
+}
+
+
+/* ======================================== REUSABLE ======================================== */
+#sidebar .btn, #top-group .btn{
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 3px;
+    margin-left: 5px;
+    cursor: pointer;
+}
+
+.btn:hover{
+    background-color: #fe875c;
+}
+
+#sidebar .icon, #top-group .icon {
+    display: inline-flex;
+    justify-content: center;
+    text-align: center;
+    background-size: contain;
+    background-origin: content-box;
+    width: 25px;
+    height: 25px;
+    padding: 3px;
+}
+
+input[type=text] {
+    border-width: 0px;
+    border: none;
+    outline: 0;
 }

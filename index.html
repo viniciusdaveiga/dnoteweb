@@ -9,6 +9,7 @@
     <link rel="stylesheet" href="/css/styles.css">
 </head>
 <body>
+
     <div id="sidebar">
         <div class="sidebar-top">
             <div class="dnoteweb">
@@ -84,6 +85,130 @@
             <span>New Note</span>
         </div>
     </div>
+
+    <div id="top-group">
+        <div class="top-bar">
+            <span class="open-sidebar">
+                <svg width="30" height="30">
+                    <path d="M0,5 28,5" stroke="#333" stroke-width="3"/>
+                    <path d="M0,13 28,13" stroke="#333" stroke-width="3"/>
+                    <path d="M0,21 28,21" stroke="#333" stroke-width="3"/>
+                </svg>
+            </span>
+            <div class="color-e-title">
+                <select name="cars" id="cars">
+                    <option value="volvo">blue</option>
+                    <option value="saab">red</option>
+                    <option value="opel">yellow</option>
+                    <option value="audi">green</option>
+                </select>
+                <input class="note-title" type="text" placeholder="Enter a title...">
+            </div>
+            <div class="actions">
+                <div class="toggle-toolbar btn">Toolbar<span class="icon-toggle-toolbar--up icon"></span></div>
+                <div class="more btn"><span id="icon-more-horizontal" class="icon"></span></div>
+            </div>
+        </div>
+        <div id="top-toolbar">
+            <div id="toolbar-group">
+                <span id="gp-formats">
+                    <select id="fontName">
+                        <option id="font-label" disabled>Font Name</option>
+                        <option id="font-arial">Arial</option>
+                        <option id="font-calibri">Calibri</option>
+                        <option id="font-cambria">Cambria</option>
+                        <option id="font-courier">Courier New</option>
+                        <option id="font-cursive">Cursive</option>
+                        <option id="font-georgia">Georgia</option>
+                        <option id="font-helvetica">Helvetica</option>
+                        <option id="font-inter">Inter</option>
+                        <option id="font-poppins" selected>Poppins</option>
+                        <option id="font-roboto">Roboto</option>
+                        <option id="font-sans">Sans-serif</option>
+                        <option id="font-segoe">Segoe UI</option>
+                        <option id="font-tahoma">Tahoma</option>
+                        <option id="font-times">Times New Roman</option>
+                        <option id="font-trebuchet">Trebuchet MS</option>
+                        <option id="font-verdana">Verdana</option>
+                    </select>
+                    <span id="dropdown-fontSize">
+                        <input type="number" name="" id="fontSize" onclick="myFunction()">
+                        <div class="content-dropdown-fontSize">
+                            <div>Size</div>
+                            <div>10</div>
+                            <div>12</div>
+                            <div>14</div>
+                            <div>16</div>
+                            <div>18</div>
+                            <div>20</div>
+                            <div>22</div>
+                            <div>24</div>
+                            <div>26</div>
+                            <div>28</div>
+                            <div>30</div>
+                        </div>
+                    </span>
+                </span>
+                <span class="gp-formats">
+                    <div class="bold btn"><span id="icon-bold" class="icon"></span></div>
+                    <div class="italic btn"><span id="icon-italic" class="icon"></span></div>
+                    <div class="underline btn"><span id="icon-underline" class="icon"></span></div>
+                    <div class="strikethrough btn"><span id="icon-strikethrough" class="icon"></span></div>
+                    <div class="superscript btn"><span id="icon-superscript" class="icon"></span></div>
+                    <div class="subscript btn"><span id="icon-subscript" class="icon"></span></div>
+                    <div class="eraser btn"><span id="icon-eraser" class="icon"></span></div>
+                </span>
+                <span class="toolbar-verticalSeparator"></span>
+                <span class="gp-formats">
+                    <div class="quote btn"><span id="icon-quote" class="icon"></span></div>
+                </span>
+                <span class="toolbar-verticalSeparator"></span>
+                <span class="gp-formats">
+                    <div class="colorText btn"><span id="icon-colorText" class="icon"></span></div>
+                    <div class="colorFill btn"><span id="icon-colorFill" class="icon"></span></div>
+                </span>
+                <span class="toolbar-verticalSeparator"></span>
+                <span class="gp-formats">
+                    <div class="unorderedList btn"><span id="icon-unorderedList" class="icon"></span></div>
+                    <div class="orderedList btn"><span id="icon-orderedList" class="icon"></span></div>
+                    <div class="checkList btn"><span id="icon-checkList" class="icon"></span></div>
+                    <div class="indentRight btn"><span id="icon-indentRight" class="icon"></span></div>
+                    <div class="indentLeft btn"><span id="icon-indentLeft" class="icon"></span></div>
+                    <div class="alignText btn" title="Align Text" onclick="myFunction2()">
+                        <span id="icon-alignText" class="alignText icon"></span>
+                        <span id="icon-dropDown" class="alignText icon"></span>
+                        <div class="content-dropdown-alignText" id="dropdown-alignText">
+                            <div class="alignLeft btn"><span id="icon-alignLeft" class="icon"></span></div>
+                            <div class="alignCenter btn"><span id="icon-alignCenter" class="icon"></span></div>
+                            <div class="alignRight btn"><span id="icon-alignRight" class="icon"></span></div>
+                            <div class="justify btn"><span id="icon-justify" class="icon"></span></div>
+                        </div>
+                    </div> 
+                </span>
+                <span class="toolbar-verticalSeparator"></span>
+                <span class="gp-formats">
+                    <div class="link btn"><span id="icon-link" class="icon"></span></div>
+                    <div class="addPhoto btn"><span id="icon-addPhoto" class="icon"></span></div>
+                </span>
+                <span class="toolbar-verticalSeparator"></span>
+                <span class="gp-formats">
+                    <div class="code btn"><span id="icon-code" class="icon"></span></div>
+                </span>
+                <span class="toolbar-verticalSeparator"></span>
+                <span class="gp-formats">
+                    <div class="returnLeft btn"><span id="icon-returnLeft" class="icon"></span></div>
+                    <div class="returnRight btn"><span id="icon-returnRight" class="icon"></span></div>
+                </span>
+            </div>
+        </div>
+    </div>
+
+    <div class="note-area">
+        <div class="editable-box" contenteditable="true">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Aut consequuntur, quibusdam asperiores consectetur dolorem labore nulla pariatur quia hic minus distinctio nostrum nemo soluta ipsum delectus quod eos atque natus eius voluptate quo aliquam reiciendis excepturi? Eaque quibusdam at ea temporibus accusamus tenetur, nostrum error architecto ratione aperiam, facilis sint rerum. Repudiandae nisi reprehenderit laboriosam, hic a accusamus asperiores ducimus enim harum beatae esse quidem vitae culpa aliquid alias, temporibus commodi. Magnam enim possimus ducimus officiis eum soluta inventore earum eaque, perferendis facere pariatur officia accusantium molestiae ipsum iusto, blanditiis ipsam, quaerat nihil assumenda sed veritatis maiores. Nihil repellendus eaque ducimus reiciendis qui incidunt aliquid, in sunt sit nobis consectetur tempora porro, excepturi dolore quasi deserunt. Cum hic consequuntur nesciunt obcaecati voluptatibus magnam rem, molestias, laboriosam inventore alias dignissimos assumenda illum vero tempora asperiores. Reiciendis distinctio hic quo quia quas id ipsam inventore officiis placeat natus expedita illo omnis ullam, exercitationem totam fugiat et, qui architecto explicabo! Nulla eveniet, aut nobis nesciunt provident sint suscipit assumenda officiis minima quae! Officiis sapiente quo enim, maxime dolor praesentium doloremque repudiandae fugit consectetur quaerat dolore. Animi rerum vero dolorem adipisci iure sequi blanditiis. Itaque aperiam nostrum veritatis corporis impedit laborum. Dicta facilis vel omnis repudiandae magni, alias ratione, quo dolor explicabo cum suscipit iusto eaque fuga atque qui sequi autem nostrum odit voluptatum error! Deserunt ullam, magnam mollitia officiis quae excepturi reiciendis deleniti dicta. Et, eius nisi itaque culpa expedita illo, fugiat sapiente nobis quaerat reiciendis laudantium ducimus nemo tempora qui tenetur iste maxime ullam odio saepe, exercitationem ratione labore incidunt. Tempore officia quidem sed ipsam deleniti veritatis, nulla pariatur ullam eius adipisci accusantium, unde magni voluptatem quasi dicta distinctio! Libero veniam eveniet ea, error ullam corrupti perspiciatis numquam minima maxime, sunt laborum ipsa, aliquam officia eligendi praesentium totam molestiae voluptas at. Doloribus sequi fugit hic similique labore, dolor natus eaque aspernatur nostrum numquam adipisci modi facilis dolorem velit eveniet nam excepturi aut nesciunt aliquid libero tempore doloremque voluptatibus incidunt. Quo fuga ea, perspiciatis omnis optio aut enim veritatis facilis. Sunt, voluptatum! Accusamus harum, magni officia labore placeat iure reiciendis nobis rem sed voluptas! Impedit ducimus, eaque in officiis debitis similique odio laborum doloremque eum asperiores id quam fugiat, accusantium cupiditate voluptatum, illum obcaecati veritatis at dicta nostrum doloribus cumque! Iure nam sequi commodi optio eligendi minima nisi porro adipisci. Necessitatibus, tempora? Laboriosam incidunt fuga quas, aliquam rerum inventore? Libero nobis ad culpa fugiat pariatur voluptate temporibus, in eius qui cum incidunt dolorem, harum cupiditate, animi aliquid veritatis earum vero modi quae expedita id eligendi! Cumque iure libero consequatur ducimus repudiandae in? Repellendus, facilis doloribus eius eligendi quaerat dolorum aut distinctio nobis explicabo totam minus fugiat velit? Quasi architecto minus facilis necessitatibus dicta adipisci voluptatem fuga? Dolore, asperiores! Perspiciatis numquam consequatur eos aliquam totam ullam ea ipsum officiis, unde sint cupiditate eligendi ex odio laborum beatae et nemo sit maxime accusamus nulla inventore soluta? Accusamus ab, obcaecati aut excepturi ullam debitis possimus deleniti temporibus quas corporis repellat! Eaque architecto quo culpa vitae obcaecati a delectus veniam nobis dolorem. Ipsa tempora debitis autem quasi, laboriosam pariatur vel, delectus officiis obcaecati quibusdam fuga, perspiciatis amet voluptates ab ipsum expedita ullam asperiores. Qui iure amet eligendi odio! Tempora debitis delectus eaque odio corrupti itaque voluptatibus sequi totam vitae cupiditate aliquam, fuga provident ducimus tenetur recusandae iure. Est, rerum delectus iste odit, modi quod possimus similique dicta perspiciatis eligendi sed, ea cumque sunt ipsum autem? Delectus laudantium illum dignissimos fugit amet deleniti, fugiat omnis enim itaque suscipit, facilis harum eius temporibus distinctio libero ab aliquam fuga, tempore nemo voluptatem odit magnam labore praesentium! Reiciendis, dolor soluta dolorum inventore, officia blanditiis dicta nisi assumenda vero quas nemo similique expedita illo? Voluptatum eaque rem doloribus dolor facilis vero recusandae odio alias ipsam, vel dignissimos hic deserunt exercitationem facere assumenda. Voluptatum deserunt veritatis fugit! Incidunt culpa nisi sint nam rerum dolorem ducimus a nobis minus hic eaque quisquam, ea suscipit voluptates dignissimos repellendus. Quasi dolor adipisci nam veritatis, ipsa harum laborum ipsam quas praesentium necessitatibus, velit nesciunt modi numquam, mollitia nostrum ut quo corporis aspernatur iste quis? Minima sapiente quisquam eveniet dolor corrupti exercitationem reiciendis nesciunt illum aperiam veritatis dolorem similique harum id quasi vitae unde, molestiae dolore saepe odio aliquam impedit voluptate natus nostrum placeat. Deleniti vero tempora quo, ducimus ea et rerum pariatur in expedita, tempore beatae sit modi nihil est natus. Dolorem modi voluptas dolor, minus magnam voluptates optio aliquam alias eveniet corporis hic inventore? Soluta quasi fuga dolores facilis quaerat iste. Natus reiciendis quasi ullam, incidunt ab non! Repellat libero exercitationem deleniti doloribus sint dolorum iusto harum neque expedita, possimus nobis sit atque magnam modi ea enim quaerat, facere ratione ex pariatur! Sequi distinctio tenetur dolores molestiae! Non nulla adipisci eaque? Quidem facere ipsum perferendis nemo qui odit autem nam, consequatur dicta esse iste eligendi quas voluptate enim quos eos sint laborum culpa rem sapiente porro! Minima officia nemo, ullam at eos laborum reiciendis error vero sunt beatae, quaerat officiis voluptatem itaque, dolorum vel. Sint asperiores magni veritatis repellat, dicta eius omnis ullam odit, sunt accusamus, ipsum cumque eligendi neque. Dolorem dignissimos deleniti ut, voluptate eos delectus excepturi, dolorum, molestias quae harum id non soluta. Dolore ullam corporis, eius pariatur harum consequuntur error deleniti unde? Architecto maiores esse nisi, incidunt, qui sapiente ipsum temporibus odio illum enim, culpa quia repellat unde iure alias. Molestias eligendi illum voluptates delectus ea ipsam accusantium, mollitia praesentium officiis! Officiis impedit tempora adipisci minima blanditiis vero, vitae, accusamus sed cumque, beatae a explicabo. Dolore, autem nam consequatur deserunt vero eum soluta quisquam consequuntur nemo repudiandae qui tempore aliquid ullam atque iste numquam debitis a accusamus minima molestiae iure quia alias sunt! Corporis eos ea ullam doloribus officia quia consequatur temporibus numquam ipsa rerum dolore facere obcaecati dolores at placeat, consectetur delectus nobis aliquam! Quae, sapiente. Accusantium, totam facere! Molestiae est possimus nemo velit tempore, culpa ex! Amet, laudantium voluptate nihil repellendus enim cupiditate saepe dolor obcaecati possimus, voluptatem quos vel rerum. Odit adipisci laboriosam et quae, voluptas dicta delectus quas consequuntur!
+        </div>
+    </div>
+
     <script src="/js/script.js"></script>
 </body>
 </html>
