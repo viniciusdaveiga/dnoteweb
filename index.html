@@ -30,50 +30,61 @@
             <div class="list-options-right">
                 <div class="sort-down btn"><span id="icon-sort-down" class="icon"></span></div>
                 <div class="sort-up btn"><span id="icon-sort-up" class="icon"></span></div>
-                <div class="color-filter btn"><span class="icon"><span class="circle"></span></span></div>
+                <div class="color-filter btn" id="color-filter-sidebar" onclick="myFunction3()">
+                    <span class="icon"><span class="circle circle-gray"></span></span>
+                    <div class="content-dropdown-colorFilter--sidebar">
+                        <div class="btn"><span class="icon"><span class="circle circle-red"></span></span></div>
+                        <div class="btn"><span class="icon"><span class="circle circle-orange"></span></span></div>
+                        <div class="btn"><span class="icon"><span class="circle circle-yellow"></span></span></div>
+                        <div class="btn"><span class="icon"><span class="circle circle-green"></span></span></div>
+                        <div class="btn"><span class="icon"><span class="circle circle-blue"></span></span></div>
+                        <div class="btn"><span class="icon"><span class="circle circle-purple"></span></span></div>
+                        <div class="btn"><span class="icon"><span class="circle circle-gray"></span></span></div>
+                    </div>
+                </div>
                 <div class="filter-settings btn"><span id="icon-filter-settings" class="icon"></span></div>         
             </div>
         </div>
 
         <div class="note-list">
             <div class="note-item">
-                <div class="note-short-title">Just a Note</div>
+                <div class="note-short-title"><span class="icon icon-note-item"><span class="circle circle-gray"></span></span>Just a Note</div>
                 <div class="note-btn-more"></div>
                 <div class="note-short-body">Here goes the content</div>
                 <div class="note-short-updated">Today 4:15pm</div>
             </div>
             <div class="note-item note-item--selected">
-                <div class="note-short-title">Just a Note</div>
+                <div class="note-short-title"><span class="icon icon-note-item"><span class="circle circle-gray"></span></span>Just a Note</div>
                 <div class="note-btn-more"></div>
                 <div class="note-short-body">Here goes the content</div>
                 <div class="note-short-updated">Today 4:15pm</div>
             </div>
             <div class="note-item">
-                <div class="note-short-title">Just a Note</div>
+                <div class="note-short-title"><span class="icon icon-note-item"><span class="circle circle-gray"></span></span>Just a Note</div>
                 <div class="note-btn-more"></div>
                 <div class="note-short-body">Here goes the content</div>
                 <div class="note-short-updated">Today 4:15pm</div>
             </div>
             <div class="note-item">
-                <div class="note-short-title">Just a Note</div>
+                <div class="note-short-title"><span class="icon icon-note-item"><span class="circle circle-gray"></span></span>Just a Note</div>
                 <div class="note-btn-more"></div>
                 <div class="note-short-body">Here goes the content</div>
                 <div class="note-short-updated">Today 4:15pm</div>
             </div>
             <div class="note-item">
-                <div class="note-short-title">Just a Note</div>
+                <div class="note-short-title"><span class="icon icon-note-item"><span class="circle circle-gray"></span></span>Just a Note</div>
                 <div class="note-btn-more"></div>
                 <div class="note-short-body">Here goes the content</div>
                 <div class="note-short-updated">Today 4:15pm</div>
             </div>
             <div class="note-item">
-                <div class="note-short-title">Just a Note</div>
+                <div class="note-short-title"><span class="icon icon-note-item"><span class="circle circle-gray"></span></span>Just a Note</div>
                 <div class="note-btn-more"></div>
                 <div class="note-short-body">Here goes the content</div>
                 <div class="note-short-updated">Today 4:15pm</div>
             </div>
             <div class="note-item">
-                <div class="note-short-title">Just a Note</div>
+                <div class="note-short-title"><span class="icon icon-note-item"><span class="circle circle-gray"></span></span>Just a Note</div>
                 <div class="note-btn-more"></div>
                 <div class="note-short-body">Here goes the content</div>
                 <div class="note-short-updated">Today 4:15pm</div>
@@ -89,19 +100,25 @@
     <div id="top-group">
         <div class="top-bar">
             <span class="open-sidebar">
-                <svg width="30" height="30">
+                <svg width="25" height="25">
                     <path d="M0,5 28,5" stroke="#333" stroke-width="3"/>
                     <path d="M0,13 28,13" stroke="#333" stroke-width="3"/>
                     <path d="M0,21 28,21" stroke="#333" stroke-width="3"/>
                 </svg>
             </span>
             <div class="color-e-title">
-                <select name="cars" id="cars">
-                    <option value="volvo">blue</option>
-                    <option value="saab">red</option>
-                    <option value="opel">yellow</option>
-                    <option value="audi">green</option>
-                </select>
+                <div class="color-filter btn" id="color-filter-topbar" onclick="myFunction4()">
+                    <span class="icon"><span class="circle circle-gray"></span></span>
+                    <div class="content-dropdown-colorFilter--top-bar">
+                        <div class="btn"><span class="icon"><span class="circle circle-red"></span></span></div>
+                        <div class="btn"><span class="icon"><span class="circle circle-orange"></span></span></div>
+                        <div class="btn"><span class="icon"><span class="circle circle-yellow"></span></span></div>
+                        <div class="btn"><span class="icon"><span class="circle circle-green"></span></span></div>
+                        <div class="btn"><span class="icon"><span class="circle circle-blue"></span></span></div>
+                        <div class="btn"><span class="icon"><span class="circle circle-purple"></span></span></div>
+                        <div class="btn"><span class="icon"><span class="circle circle-gray"></span></span></div>
+                    </div>
+                </div>
                 <input class="note-title" type="text" placeholder="Enter a title...">
             </div>
             <div class="actions">
@@ -109,9 +126,9 @@
                 <div class="more btn"><span id="icon-more-horizontal" class="icon"></span></div>
             </div>
         </div>
-        <div id="top-toolbar">
-            <div id="toolbar-group">
-                <span id="gp-formats">
+        <div class="top-toolbar">
+            <div class="toolbar-group">
+                <span class="gp-formats">
                     <select id="fontName">
                         <option id="font-label" disabled>Font Name</option>
                         <option id="font-arial">Arial</option>
@@ -134,7 +151,7 @@
                     <span id="dropdown-fontSize">
                         <input type="number" name="" id="fontSize" onclick="myFunction()">
                         <div class="content-dropdown-fontSize">
-                            <div>Size</div>
+                            <p>Size</p>
                             <div>10</div>
                             <div>12</div>
                             <div>14</div>
@@ -164,8 +181,16 @@
                 </span>
                 <span class="toolbar-verticalSeparator"></span>
                 <span class="gp-formats">
-                    <div class="colorText btn"><span id="icon-colorText" class="icon"></span></div>
-                    <div class="colorFill btn"><span id="icon-colorFill" class="icon"></span></div>
+                    <div class="colorText btn">
+                        <span id="icon-colorText" class="icon">
+                            <svg height="48" viewBox="0 0 48 48" width="48" xmlns="http://www.w3.org/2000/svg"><path d="M0 0h48v48h-48z" fill="none"/><path d="M0 40h48v8h-48z" fill-opacity=".36"/><path d="M22 6l-11 28h4.5l2.25-6h12.5l2.25 6h4.5l-11-28h-4zm-2.75 18l4.75-12.67 4.75 12.67h-9.5z"/></svg>
+                        </span>
+                    </div>
+                    <div class="colorFill btn">
+                        <span id="icon-colorFill" class="icon">
+                            <svg height="48" viewBox="0 0 48 48" width="48" xmlns="http://www.w3.org/2000/svg"><path d="M0 0h48v48h-48z" fill="none"/><path d="M33.12 17.88l-17.88-17.88-2.83 2.83 4.76 4.76-10.29 10.29c-1.17 1.17-1.17 3.07 0 4.24l11 11c.58.59 1.35.88 2.12.88s1.54-.29 2.12-.88l11-11c1.17-1.17 1.17-3.07 0-4.24zm-22.71 2.12l9.59-9.58 9.59 9.58h-19.18zm27.59 3s-4 4.33-4 7c0 2.21 1.79 4 4 4s4-1.79 4-4c0-2.67-4-7-4-7z"/><path d="M0 40h48v8h-48z" fill-opacity=".36"/></svg>
+                        </span>
+                    </div>
                 </span>
                 <span class="toolbar-verticalSeparator"></span>
                 <span class="gp-formats">
@@ -177,7 +202,7 @@
                     <div class="alignText btn" title="Align Text" onclick="myFunction2()">
                         <span id="icon-alignText" class="alignText icon"></span>
                         <span id="icon-dropDown" class="alignText icon"></span>
-                        <div class="content-dropdown-alignText" id="dropdown-alignText">
+                        <div class="content-dropdown-alignText">
                             <div class="alignLeft btn"><span id="icon-alignLeft" class="icon"></span></div>
                             <div class="alignCenter btn"><span id="icon-alignCenter" class="icon"></span></div>
                             <div class="alignRight btn"><span id="icon-alignRight" class="icon"></span></div>

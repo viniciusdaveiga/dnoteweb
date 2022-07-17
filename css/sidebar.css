@@ -74,6 +74,7 @@ body.dark .sidebar-top #close-sidebar{
 .search-icon {
     background: url(/img/search.svg) center no-repeat;
     margin: 0 10px;
+    cursor: auto;
 }
 
 #sidebar .search-box{
@@ -84,7 +85,6 @@ body.dark .sidebar-top #close-sidebar{
     margin: 10px;
     border-radius: 6px;
     background-color: var(--primary-color-light);
-    cursor: pointer;
     transition: var(--tran-03);
 }
 
@@ -102,27 +102,6 @@ body.dark .sidebar-top #close-sidebar{
 }
 
 /* ======================================== LIST OPTIONS ======================================== */
-.circle {
-    display: inline-block;
-    height: 100%;
-    width: 100%;
-    background-color: rgb(11, 228, 94);
-    border-radius: 50%;
-    border: solid 1.5px;
-}
-
-#icon-sort-down {
-    background: url(/img/sort-down.svg) center no-repeat;
-}
-
-#icon-sort-up {
-    background: url(/img/sort-up-alt.svg) center no-repeat;
-}
-
-#icon-filter-settings {
-    background: url(/img/sliders.svg) center no-repeat;
-}
-
 .list-options{
     display: flex;
     justify-content: space-between;
@@ -133,6 +112,29 @@ body.dark .sidebar-top #close-sidebar{
 
 .list-options-right{
     display: inline-flex;
+}
+
+#icon-sort-down {
+    background: url(/img/sort-down.svg) center no-repeat;
+}
+
+#icon-sort-up {
+    background: url(/img/sort-up-alt.svg) center no-repeat;
+}
+
+.content-dropdown-colorFilter--sidebar {
+    display: none;
+    position: fixed;
+    top: 132px;
+    background-color: #f9f9f9;
+    min-width: 25px;
+    border-radius: 3px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 9999;
+}
+
+#icon-filter-settings {
+    background: url(/img/sliders.svg) center no-repeat;
 }
 
 /* ======================================== NOTE LIST ======================================== */
@@ -189,6 +191,12 @@ body.dark .sidebar-top #close-sidebar{
     border-bottom: solid 1px #f0f2fc;
 }
 
+.icon-note-item {
+    width: 15px!important;
+    height: 15px!important;
+    margin-right: 3px;
+}
+
 .note-item--selected {
     background: #eeeeee;
     font-weight: bold;
@@ -197,6 +205,8 @@ body.dark .sidebar-top #close-sidebar{
 .note-short-title,
 .note-short-updated {
     padding: 10px;
+    display: flex;
+    align-items: center;
 }
 
 .note-short-title {
@@ -210,7 +220,7 @@ body.dark .sidebar-top #close-sidebar{
 .note-short-updated {
     color: #aaaaaa;
     font-style: italic;
-    text-align: right;
+    justify-content: right;
 }
 
 /* ======================================== NEW NOTE ======================================== */

@@ -25,3 +25,6 @@
     padding-left: calc(96px + env(safe-area-inset-left));
     padding-right: calc(96px + env(safe-area-inset-right));
 }
+.editable-box:focus{
+    outline: none;
+}

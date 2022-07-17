@@ -92,3 +92,48 @@ input[type=text] {
     border: none;
     outline: 0;
 }
+
+.show-dropdown-colorFilter {
+    display: flex;
+    flex-direction: column;
+
+    z-index: 102;
+}
+.color-filter .btn {
+    margin: 0!important;
+}
+.circle {
+    display: inline-block;
+    height: 100%;
+    width: 100%;
+    border-radius: 50%;
+    border: solid 1.5px;
+}
+.circle-gray {
+    background-color: gray;
+    border: solid 1px rgb(75, 75, 75);
+}
+.circle-red {
+    background-color: rgb(255, 99, 90);
+    border: solid 1px rgb(176, 55, 49)
+}
+.circle-orange {
+    background-color: rgb(246, 182, 63);
+    border: solid 1px rgb(181, 134, 47);
+}
+.circle-yellow {
+    background-color: rgb(244, 244, 20);
+    border: solid 1px rgb(226, 226, 31);
+}
+.circle-green {
+    background-color: rgb(84, 214, 103);
+    border: solid 1px rgb(62, 157, 76);
+}
+.circle-blue {
+    background-color: rgb(53, 149, 255);
+    border: solid 1px rgb(39, 105, 175);
+}
+.circle-purple {
+    background-color: rgb(191, 118, 228);
+    border: solid 1px rgb(137, 84, 164);
+}
