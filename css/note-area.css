@@ -25,7 +25,19 @@
     padding-bottom: 8vh;
     padding-left: calc(96px + env(safe-area-inset-left));
     padding-right: calc(96px + env(safe-area-inset-right));
+    margin: auto;
+    max-width: 1024px;
 }
 .editable-box:focus{
     outline: none;
+}
+
+@media only screen and (max-width: 600px){
+	.editable-box{
+        padding: 4vh;
+    }
+    .note-area {
+        margin: 0;
+        max-width: 100%;
+    }
 }

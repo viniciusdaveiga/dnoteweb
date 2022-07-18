@@ -14,7 +14,7 @@ const body = document.querySelector('body'),
       // Note Area
       noteArea = body.querySelector('.note-area');
 
-    
+
 function scrollDetector() {
     let hs = toolbar.scrollWidth > toolbar.clientWidth;
     if (hs == true){
@@ -32,7 +32,7 @@ btnScrollR.onclick = function () {
     sideScroll(toolbar,'right',20,20,2);
 };
 btnScrollL.onclick = function () {
-    sideScroll(toolbar,'left',20,20,20);
+    sideScroll(toolbar,'left',20,20,2);
 };
 function sideScroll(element,direction,speed,distance,step){
     scrollAmount = 0;
@@ -52,22 +52,28 @@ function sideScroll(element,direction,speed,distance,step){
 
 closeToggle.addEventListener("click" , () =>{
     sidebar.classList.toggle("sidebar-closed");
-    colorAndTitle.classList.toggle("right");
-    noteArea.classList.toggle("left");
-    toolbarGroup.classList.toggle("right");
     setTimeout(() => {
         scrollDetector()
     }, 130);
+    if (window.matchMedia("(min-width: 600px)").matches) {
+        if (!noteArea.classList.contains("left")){
+            colorAndTitle.classList.add("right");
+            noteArea.classList.add("left");
+            toolbarGroup.classList.add("right");
+        } 
+    }
 })
 
 openToggle.addEventListener("click" , () =>{
     sidebar.classList.toggle("sidebar-closed");
-    colorAndTitle.classList.toggle("right");
-    noteArea.classList.toggle("left");
-    toolbarGroup.classList.toggle("right");
     setTimeout(() => {
         scrollDetector()
     }, 130);
+    if (window.matchMedia("(min-width: 600px)").matches) {
+        colorAndTitle.classList.toggle("right");
+        noteArea.classList.toggle("left");
+        toolbarGroup.classList.toggle("right");
+    }
 })
 
 toggleToolbar.addEventListener("click" , () =>{

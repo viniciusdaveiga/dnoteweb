@@ -187,7 +187,7 @@
 }
 #dropdown-fontSize {
     position: relative;
-    display: inline-block;
+    display: block;
 }
 .content-dropdown-fontSize {
     display: none;
@@ -300,6 +300,7 @@
 .show-dropdown-alignText {
     display: flex;
     flex-direction: column;
+    float: right;
 }
 #top-group .alignText .btn {
     margin: 0;
