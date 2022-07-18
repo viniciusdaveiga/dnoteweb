@@ -1,16 +1,17 @@
 .note-area {
     max-width: calc(100% - 20rem);
     display: flex;
-    flex-shrink: 1;
+    flex-shrink: 0;
     flex-direction: column;
     font-size: 16px;
     line-height: 1.5;
-    position: relative;
+    position: fixed;
+    bottom: 0;
     width: 100%;
     z-index: 4;
     margin-left: 20rem;
     transition: var(--tran-03);
-    height: calc(-45px + 100vh);
+    height: calc(-85px + 100vh);
     max-height: 100%;
     overflow: hidden auto;
 }
@@ -20,8 +21,8 @@
     line-height: 1.5;
     width: 100%;
     z-index: 4;
-    padding-top: 5vh;
-    padding-bottom: 15vh;
+    padding-top: 4vh;
+    padding-bottom: 8vh;
     padding-left: calc(96px + env(safe-area-inset-left));
     padding-right: calc(96px + env(safe-area-inset-right));
 }

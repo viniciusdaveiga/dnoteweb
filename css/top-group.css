@@ -77,11 +77,8 @@
     padding-left: 6px;
     padding-right: 3px;
 }
-.icon-toggle-toolbar--up {
+.icon-toggle-toolbar {
     background: url(/img/chevron-up.svg) center no-repeat;
-}
-.icon-toggle-toolbar--down {
-    background: url(/img/chevron-down.svg) center no-repeat;
 }
 
 #icon-more-horizontal {
@@ -99,6 +96,7 @@
     scrollbar-width: none; /* Firefox */
 }
 .top-toolbar {
+    transition: var(--tran-03);
     border-bottom: solid 1px rgb(1, 1, 1, 0.2);
     display: flex;
     width: 100%;
@@ -112,24 +110,47 @@
     flex-wrap: wrap;
     overflow: auto hidden;
     align-items: center;
-    transition: var(--tran-03);
 }
 
 .toolbar-closed {
-    background-color: aqua;
     transform: translateY(-55px);
-    transition: var(--tran-03);
-    display: none;
 }
 
 .toolbar-group{
     display: flex;
     margin-right: 10px;
-    width: 980px;
+    margin-left: 300px;
+    width: 950px;
     justify-content: center;
     align-items: center;
     height: 100%;
+    transition: var(--tran-03);
 }
+
+#scroll-toolbar{
+    margin: 0 5px;
+}
+#scroll-left:hover, #scroll-right:hover {
+    background-color: rgb(134, 134, 134);
+}
+#scroll-left {
+    background: url(/img/toolbar/chevron-compact-left.svg) center no-repeat;
+    position: fixed;
+    margin-right: 20px;
+}
+#scroll-right {
+    background: url(/img/toolbar/chevron-compact-right.svg) center no-repeat;
+    position: fixed;
+    right: 0;
+    top: 45px;
+}
+#scroll-left, #scroll-right {
+    height: 40px!important;
+    width: 18px!important;
+    padding: 0!important;
+    background-color: #adabab;
+}
+
 
 .gp-formats {
     display: flex;
@@ -149,6 +170,7 @@
 
 #fontName {
     width: 143px;
+    margin-right: 5px;
 }
 #fontName:focus{
     outline: none;

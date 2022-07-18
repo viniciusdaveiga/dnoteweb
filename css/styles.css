@@ -61,6 +61,9 @@ body.dark{
     margin-left: 0px;
 }
 
+.displayNone {
+    display: none;
+}
 
 /* ======================================== REUSABLE ======================================== */
 #sidebar .btn, #top-group .btn{

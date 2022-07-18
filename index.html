@@ -30,7 +30,7 @@
             <div class="list-options-right">
                 <div class="sort-down btn"><span id="icon-sort-down" class="icon"></span></div>
                 <div class="sort-up btn"><span id="icon-sort-up" class="icon"></span></div>
-                <div class="color-filter btn" id="color-filter-sidebar" onclick="myFunction3()">
+                <div class="color-filter btn" id="color-filter-sidebar" onclick="colorFilterSidebar()">
                     <span class="icon"><span class="circle circle-gray"></span></span>
                     <div class="content-dropdown-colorFilter--sidebar">
                         <div class="btn"><span class="icon"><span class="circle circle-red"></span></span></div>
@@ -42,7 +42,7 @@
                         <div class="btn"><span class="icon"><span class="circle circle-gray"></span></span></div>
                     </div>
                 </div>
-                <div class="filter-settings btn"><span id="icon-filter-settings" class="icon"></span></div>         
+                <div class="filter-settings btn"><span id="icon-filter-settings" class="icon"></span></div>
             </div>
         </div>
 
@@ -119,15 +119,16 @@
                         <div class="btn"><span class="icon"><span class="circle circle-gray"></span></span></div>
                     </div>
                 </div>
-                <input class="note-title" type="text" placeholder="Enter a title...">
+                <input class="note-title" type="text" placeholder="Enter a title..." onclick="GFG_Fun()">
             </div>
             <div class="actions">
-                <div class="toggle-toolbar btn">Toolbar<span class="icon-toggle-toolbar--up icon"></span></div>
+                <div class="toggle-toolbar btn">Toolbar<span class="icon-toggle-toolbar icon"></span></div>
                 <div class="more btn"><span id="icon-more-horizontal" class="icon"></span></div>
             </div>
         </div>
         <div class="top-toolbar">
             <div class="toolbar-group">
+                <div id="scroll-toolbar" class="btn"><span id="scroll-left" class="icon"></span></div>
                 <span class="gp-formats">
                     <select id="fontName">
                         <option id="font-label" disabled>Font Name</option>
@@ -225,6 +226,7 @@
                     <div class="returnRight btn"><span id="icon-returnRight" class="icon"></span></div>
                 </span>
             </div>
+            <div id="scroll-toolbar" class="btn"><span id="scroll-right" class="icon"></span></div>
         </div>
     </div>
 
