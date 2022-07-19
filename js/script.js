@@ -53,7 +53,8 @@ function alignDropdown (target, dropdown) {
     const targetRect = target.getBoundingClientRect();
     const dropdownRect = dropdown.getBoundingClientRect();
 
-    const left = targetRect.left + targetRect.width / 2 - dropdownRect.width / 2;
+    // const left = targetRect.left + targetRect.width / 2 - dropdownRect.width / 2;
+    const left = targetRect.left + targetRect.width - dropdownRect.width;
 
     dropdown.style.left = `${left}px`;
 }
@@ -105,7 +106,7 @@ toggleToolbar.addEventListener("click" , () =>{
         setTimeout(() => {
             toolbar.classList.add("displayNone");
             icon.style.transform = 'rotate(180deg)';
-        }, 130);
+        }, 80);
     }
 })
 
@@ -113,21 +114,35 @@ function colorFilterSidebar() {
     document.querySelector(".content-dropdown-colorFilter--sidebar").classList.toggle("show-dropdown-colorFilter");
 }
 
-function fontSizeFunction() {
+function chooseFontSize() {
     const fontSize = document.querySelector("#fontSize");
     const contentDropdownFontSize = document.querySelector(".content-dropdown-fontSize");
     contentDropdownFontSize.classList.toggle("show-dropdown-fontSize");
     alignDropdown(fontSize,contentDropdownFontSize);
 }
 
-function alignTextFunction() {
+function openMoreTopbar() {
+    const moreTopbar = document.querySelector(".more");
+    const contentDropdownMoreTopbar = document.querySelector(".content-dropdown-moreTopbar");
+    contentDropdownMoreTopbar.classList.toggle("show-dropdown-moreTopbar");
+    alignDropdown(moreTopbar,contentDropdownMoreTopbar);
+}
+
+function chooseTextAlignment() {
     const alignText = document.querySelector(".alignText");
     const contentDropdownAlignText = document.querySelector(".content-dropdown-alignText");
     contentDropdownAlignText.classList.toggle("show-dropdown-alignText");
     alignDropdown(alignText,contentDropdownAlignText);
 }
 
-function myFunction4() {
+function chooseFontName() {
+    const fontName = document.querySelector("#fontName");
+    const contentDropdownFontName = document.querySelector(".content-dropdown-fontName");
+    contentDropdownFontName.classList.toggle("show-dropdown-fontName");
+    alignDropdown(fontName,contentDropdownFontName);
+}
+
+function colorFilterTopbar() {
     document.querySelector(".content-dropdown-colorFilter--top-bar").classList.toggle("show-dropdown-colorFilter");
 }
 
@@ -139,10 +154,22 @@ window.onclick = function(e) {
             myDropdown.classList.remove('show-dropdown-fontSize');
         }
     }
+    if (!e.target.matches('#fontName')) {
+        const myDropdown = document.querySelector(".content-dropdown-fontName");
+        if (myDropdown.classList.contains('show-dropdown-fontName')) {
+            myDropdown.classList.remove('show-dropdown-fontName');
+        }
+    }
     if (!e.target.matches('.alignText')) {
         const myDropdown = document.querySelector(".content-dropdown-alignText");
         if (myDropdown.classList.contains('show-dropdown-alignText')) {
             myDropdown.classList.remove('show-dropdown-alignText');
+        }
+    }
+    if (!e.target.matches('.more .icon, .more')) {
+        const myDropdown = document.querySelector(".content-dropdown-moreTopbar");
+        if (myDropdown.classList.contains('show-dropdown-moreTopbar')) {
+            myDropdown.classList.remove('show-dropdown-moreTopbar');
         }
     }
     if (!e.target.matches('#color-filter-sidebar .icon, #color-filter-sidebar .circle')) {

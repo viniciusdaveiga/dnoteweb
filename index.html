@@ -107,7 +107,7 @@
                 </svg>
             </span>
             <div class="color-e-title">
-                <div class="color-filter btn" id="color-filter-topbar" onclick="myFunction4()">
+                <div class="color-filter btn" id="color-filter-topbar" onclick="colorFilterTopbar()">
                     <span class="icon"><span class="circle circle-gray"></span></span>
                     <div class="content-dropdown-colorFilter--top-bar">
                         <div class="btn"><span class="icon"><span class="circle circle-red"></span></span></div>
@@ -119,38 +119,48 @@
                         <div class="btn"><span class="icon"><span class="circle circle-gray"></span></span></div>
                     </div>
                 </div>
-                <input class="note-title" type="text" placeholder="Enter a title..." onclick="GFG_Fun()">
+                <input class="note-title" type="text" placeholder="Enter a title...">
             </div>
             <div class="actions">
                 <div class="toggle-toolbar btn">Toolbar<span class="icon-toggle-toolbar icon"></span></div>
-                <div class="more btn"><span id="icon-more-horizontal" class="icon"></span></div>
+                <div class="more btn" onclick="openMoreTopbar()"><span id="icon-more-horizontal" class="icon"></span>
+                    <div class="content-dropdown-moreTopbar">
+                        <div><span class="icon more-delete"></span> Delete</div>
+                        <div><span class="icon more-export"></span> Export</div>
+                        <div><span class="icon more-details"></span> Details</div>
+                        <div><span class="icon more-fullscreen"></span> FullScreen</div>
+                    </div>
+                </div>
             </div>
         </div>
         <div class="top-toolbar">
             <div class="toolbar-group">
                 <div id="scroll-toolbar" class="btn"><span id="scroll-left" class="icon"></span></div>
                 <span class="gp-formats">
-                    <select id="fontName">
-                        <option id="font-label" disabled>Font Name</option>
-                        <option id="font-arial">Arial</option>
-                        <option id="font-calibri">Calibri</option>
-                        <option id="font-cambria">Cambria</option>
-                        <option id="font-courier">Courier New</option>
-                        <option id="font-cursive">Cursive</option>
-                        <option id="font-georgia">Georgia</option>
-                        <option id="font-helvetica">Helvetica</option>
-                        <option id="font-inter">Inter</option>
-                        <option id="font-poppins" selected>Poppins</option>
-                        <option id="font-roboto">Roboto</option>
-                        <option id="font-sans">Sans-serif</option>
-                        <option id="font-segoe">Segoe UI</option>
-                        <option id="font-tahoma">Tahoma</option>
-                        <option id="font-times">Times New Roman</option>
-                        <option id="font-trebuchet">Trebuchet MS</option>
-                        <option id="font-verdana">Verdana</option>
-                    </select>
+                    <span id="dropdown-fontName">
+                        <div id="fontName" onclick="chooseFontName()">teste</div>
+                        <div class="content-dropdown-fontName">
+                            <p id="font-label" disabled>Font Name</p>
+                            <div id="font-arial">Arial</div>
+                            <div id="font-calibri">Calibri</div>
+                            <div id="font-cambria">Cambria</div>
+                            <div id="font-courier">Courier New</div>
+                            <div id="font-cursive">Cursive</div>
+                            <div id="font-georgia">Georgia</div>
+                            <div id="font-helvetica">Helvetica</div>
+                            <div id="font-inter">Inter</div>
+                            <div id="font-poppins" selected>Poppins</div>
+                            <div id="font-roboto">Roboto</div>
+                            <div id="font-sans">Sans-serif</div>
+                            <div id="font-segoe">Segoe UI</div>
+                            <div id="font-tahoma">Tahoma</div>
+                            <div id="font-times">Times New Roman</div>
+                            <div id="font-trebuchet">Trebuchet MS</div>
+                            <div id="font-verdana">Verdana</div>
+                        </div>
+                    </span>
                     <span id="dropdown-fontSize">
-                        <input type="number" name="" id="fontSize" onclick="fontSizeFunction()">
+                        <input type="number" name="" id="fontSize" onclick="chooseFontSize()">
                         <div class="content-dropdown-fontSize">
                             <p>Size</p>
                             <div>10</div>
@@ -200,7 +210,7 @@
                     <div class="checkList btn"><span id="icon-checkList" class="icon"></span></div>
                     <div class="indentRight btn"><span id="icon-indentRight" class="icon"></span></div>
                     <div class="indentLeft btn"><span id="icon-indentLeft" class="icon"></span></div>
-                    <div class="alignText btn" title="Align Text" onclick="alignTextFunction()">
+                    <div class="alignText btn" title="Align Text" onclick="chooseTextAlignment()">
                         <span id="icon-alignText" class="alignText icon"></span>
                         <span id="icon-dropDown" class="alignText icon"></span>
                         <div class="content-dropdown-alignText">
