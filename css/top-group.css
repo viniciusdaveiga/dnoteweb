@@ -300,7 +300,6 @@
 .show-dropdown-alignText {
     display: flex;
     flex-direction: column;
-    float: right;
 }
 #top-group .alignText .btn {
     margin: 0;

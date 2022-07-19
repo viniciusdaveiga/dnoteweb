@@ -49,6 +49,14 @@ function sideScroll(element,direction,speed,distance,step){
     }, speed);
 }
 
+function alignDropdown (target, dropdown) {
+    const targetRect = target.getBoundingClientRect();
+    const dropdownRect = dropdown.getBoundingClientRect();
+
+    const left = targetRect.left + targetRect.width / 2 - dropdownRect.width / 2;
+
+    dropdown.style.left = `${left}px`;
+}
 
 closeToggle.addEventListener("click" , () =>{
     sidebar.classList.toggle("sidebar-closed");
@@ -101,12 +109,18 @@ function colorFilterSidebar() {
     document.querySelector(".content-dropdown-colorFilter--sidebar").classList.toggle("show-dropdown-colorFilter");
 }
 
-function myFunction() {
-    document.querySelector(".content-dropdown-fontSize").classList.toggle("show-dropdown-fontSize");
+function fontSizeFunction() {
+    const fontSize = document.querySelector("#fontSize");
+    const contentDropdownFontSize = document.querySelector(".content-dropdown-fontSize");
+    contentDropdownFontSize.classList.toggle("show-dropdown-fontSize");
+    alignDropdown(fontSize,contentDropdownFontSize);
 }
 
-function myFunction2() {
-    document.querySelector(".content-dropdown-alignText").classList.toggle("show-dropdown-alignText");
+function alignTextFunction() {
+    const alignText = document.querySelector(".alignText");
+    const contentDropdownAlignText = document.querySelector(".content-dropdown-alignText");
+    contentDropdownAlignText.classList.toggle("show-dropdown-alignText");
+    alignDropdown(alignText,contentDropdownAlignText);
 }
 
 function myFunction4() {
