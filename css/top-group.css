@@ -137,12 +137,14 @@
     background: url(/img/toolbar/chevron-compact-left.svg) center no-repeat;
     position: fixed;
     left: 312px;
+    transition: var(--tran-01);
 }
 #scroll-right {
     background: url(/img/toolbar/chevron-compact-right.svg) center no-repeat;
     position: fixed;
     right: 0;
     top: 45px;
+    transition: var(--tran-01);
 }
 #scroll-left, #scroll-right {
     height: 40px!important;

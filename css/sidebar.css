@@ -184,11 +184,17 @@ body.dark .sidebar-top #close-sidebar{
     right: 10px;
     background-color: #69fe5c;
 }
+.note-btn-more:hover {
+    background-color: #83b57f;
+}
 
 .note-item {
     position: relative;
     cursor: pointer;
     border-bottom: solid 1px #f0f2fc;
+}
+.note-item:hover {
+    background-color: rgb(212, 212, 212);
 }
 
 .icon-note-item {
@@ -246,4 +252,9 @@ body.dark .sidebar-top #close-sidebar{
     height: 45px;
     background-color: #69fe5c;
     margin-top: auto;
+    cursor: pointer;
+}
+
+#sidebar .new-note:hover {
+    background-color: #5fe153;
 }

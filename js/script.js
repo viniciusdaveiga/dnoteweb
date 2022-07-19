@@ -63,7 +63,7 @@ closeToggle.addEventListener("click" , () =>{
     btnScrollL.style.left = "0";
     setTimeout(() => {
         scrollDetector()
-    }, 150);
+    }, 130);
 
     if (!noteArea.classList.contains("left")){
         colorAndTitle.classList.add("right");
@@ -85,7 +85,7 @@ openToggle.addEventListener("click" , () =>{
             toolbarGroup.classList.remove("right");
             setTimeout(() => {
                 btnScrollL.style.left = "312px";
-            }, 200);
+            }, 130);
         } 
     }
 })
