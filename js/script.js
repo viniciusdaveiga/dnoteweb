@@ -60,16 +60,17 @@ function alignDropdown (target, dropdown) {
 
 closeToggle.addEventListener("click" , () =>{
     sidebar.classList.toggle("sidebar-closed");
+    btnScrollL.style.left = "0";
     setTimeout(() => {
         scrollDetector()
-    }, 130);
-    if (window.matchMedia("(min-width: 600px)").matches) {
-        if (!noteArea.classList.contains("left")){
-            colorAndTitle.classList.add("right");
-            noteArea.classList.add("left");
-            toolbarGroup.classList.add("right");
-        } 
-    }
+    }, 150);
+
+    if (!noteArea.classList.contains("left")){
+        colorAndTitle.classList.add("right");
+        noteArea.classList.add("left");
+        toolbarGroup.classList.add("right");
+    } 
+    
 })
 
 openToggle.addEventListener("click" , () =>{
@@ -78,9 +79,14 @@ openToggle.addEventListener("click" , () =>{
         scrollDetector()
     }, 130);
     if (window.matchMedia("(min-width: 600px)").matches) {
-        colorAndTitle.classList.toggle("right");
-        noteArea.classList.toggle("left");
-        toolbarGroup.classList.toggle("right");
+        if (noteArea.classList.contains("left")){
+            colorAndTitle.classList.remove("right");
+            noteArea.classList.remove("left");
+            toolbarGroup.classList.remove("right");
+            setTimeout(() => {
+                btnScrollL.style.left = "312px";
+            }, 200);
+        } 
     }
 })
 
@@ -103,8 +109,6 @@ toggleToolbar.addEventListener("click" , () =>{
     }
 })
 
-/* When the user clicks on the button, 
-toggle between hiding and showing the dropdown content */
 function colorFilterSidebar() {
     document.querySelector(".content-dropdown-colorFilter--sidebar").classList.toggle("show-dropdown-colorFilter");
 }

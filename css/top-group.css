@@ -136,7 +136,7 @@
 #scroll-left {
     background: url(/img/toolbar/chevron-compact-left.svg) center no-repeat;
     position: fixed;
-    margin-right: 20px;
+    left: 312px;
 }
 #scroll-right {
     background: url(/img/toolbar/chevron-compact-right.svg) center no-repeat;
@@ -149,8 +149,8 @@
     width: 18px!important;
     padding: 0!important;
     background-color: #adabab;
+    z-index: 9999;
 }
-
 
 .gp-formats {
     display: flex;
