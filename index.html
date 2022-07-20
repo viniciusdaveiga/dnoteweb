@@ -11,9 +11,14 @@
 <body>
 
     <div id="sidebar">
-        <div class="sidebar-top">
+        <div class="sidebar-top" onclick="openDnotewebMenu()">
             <div class="dnoteweb">
                 <div class="logo-text">dnoteweb<span class="extra-options icon"></span></div>
+                <div id="dropdown-dnoteweb" class="content-dropdown">
+                    <div><span class="icon more-export"></span> Export All</div>
+                    <div><span class="icon more-mode"></span> Dark Mode</div>
+                    <div><span class="icon more-github"></span> By Vinícius André da Veiga</div>
+                </div>
             </div>
             <div class="close-sidebar btn"><span id="icon-close-sidebar" class="icon"></span></div>
         </div>
@@ -32,7 +37,7 @@
                 <div class="sort-up btn"><span id="icon-sort-up" class="icon"></span></div>
                 <div class="color-filter btn" id="color-filter-sidebar" onclick="colorFilterSidebar()">
                     <span class="icon"><span class="circle circle-gray"></span></span>
-                    <div class="content-dropdown-colorFilter--sidebar">
+                    <div id="dropdown-colorFilterSidebar" class="content-dropdown">
                         <div class="btn"><span class="icon"><span class="circle circle-red"></span></span></div>
                         <div class="btn"><span class="icon"><span class="circle circle-orange"></span></span></div>
                         <div class="btn"><span class="icon"><span class="circle circle-yellow"></span></span></div>
@@ -40,52 +45,85 @@
                         <div class="btn"><span class="icon"><span class="circle circle-blue"></span></span></div>
                         <div class="btn"><span class="icon"><span class="circle circle-purple"></span></span></div>
                         <div class="btn"><span class="icon"><span class="circle circle-gray"></span></span></div>
+                        <div class="btn"><span class="icon"><span class="circle circle-neutral"></span></span></div>
                     </div>
                 </div>
-                <div class="filter-settings btn"><span id="icon-filter-settings" class="icon"></span></div>
+                <div class="filter-settings btn" onclick="filterSettings()"><span id="icon-filter-settings" class="icon"></span></div>
+                <div id="dropdown-filterSettings" class="content-dropdown">
+                    <div><input type="radio" class="btnRadio" id="title" name="filterOption" value="fTitle">
+                        <label for="title">Filter by Title</label>
+                    </div>
+                    <div><input type="radio" class="btnRadio" id="update" name="filterOption" value="fUpdate" checked>
+                        <label for="update">Filter by Update</label>
+                    </div>
+                </div>
             </div>
         </div>
 
         <div class="note-list">
             <div class="note-item">
                 <div class="note-short-title"><span class="icon icon-note-item"><span class="circle circle-gray"></span></span>Just a Note</div>
-                <div class="note-btn-more"></div>
+                <div class="btn btnMoreNoteItem"><span class="icon icon-noteItemMore" id="moreNoteItem1"></span></div>
+                <div class="content-dropdown dropdown-moreNoteItem">
+                    <div><span class="icon more-delete"></span> Delete</div>
+                    <div><span class="icon more-export"></span> Export</div>
+                    <div><span class="icon more-details"></span> Details</div>
+                </div>
                 <div class="note-short-body">Here goes the content</div>
                 <div class="note-short-updated">Today 4:15pm</div>
             </div>
             <div class="note-item note-item--selected">
-                <div class="note-short-title"><span class="icon icon-note-item"><span class="circle circle-gray"></span></span>Just a Note</div>
-                <div class="note-btn-more"></div>
+                <div class="note-short-title"><span class="icon icon-note-item noteItem2"><span class="circle circle-gray"></span></span>Just a Note</div>
+                <div class="btn btnMoreNoteItem"><span class="icon icon-noteItemMore" id="moreNoteItem2"></span></div>
+                <div class="content-dropdown dropdown-moreNoteItem">
+                    <div><span class="icon more-delete"></span> Delete</div>
+                    <div><span class="icon more-export"></span> Export</div>
+                    <div><span class="icon more-details"></span> Details</div>
+                </div>
                 <div class="note-short-body">Here goes the content</div>
                 <div class="note-short-updated">Today 4:15pm</div>
             </div>
-            <div class="note-item">
+            <div class="note-item noteItem3">
                 <div class="note-short-title"><span class="icon icon-note-item"><span class="circle circle-gray"></span></span>Just a Note</div>
-                <div class="note-btn-more"></div>
+                <div class="btn btnMoreNoteItem"><span class="icon icon-noteItemMore" id="moreNoteItem3"></span></div>
+                <div class="content-dropdown dropdown-moreNoteItem">
+                    <div><span class="icon more-delete"></span> Delete</div>
+                    <div><span class="icon more-export"></span> Export</div>
+                    <div><span class="icon more-details"></span> Details</div>
+                </div>
                 <div class="note-short-body">Here goes the content</div>
                 <div class="note-short-updated">Today 4:15pm</div>
             </div>
-            <div class="note-item">
+            <div class="note-item noteItem4">
                 <div class="note-short-title"><span class="icon icon-note-item"><span class="circle circle-gray"></span></span>Just a Note</div>
-                <div class="note-btn-more"></div>
+                <div class="btn btnMoreNoteItem"><span class="icon icon-noteItemMore" id="moreNoteItem4"></span></div>
+                <div class="content-dropdown dropdown-moreNoteItem">
+                    <div><span class="icon more-delete"></span> Delete</div>
+                    <div><span class="icon more-export"></span> Export</div>
+                    <div><span class="icon more-details"></span> Details</div>
+                </div>
                 <div class="note-short-body">Here goes the content</div>
                 <div class="note-short-updated">Today 4:15pm</div>
             </div>
-            <div class="note-item">
+            <div class="note-item noteItem5">
                 <div class="note-short-title"><span class="icon icon-note-item"><span class="circle circle-gray"></span></span>Just a Note</div>
-                <div class="note-btn-more"></div>
+                <div class="btn btnMoreNoteItem"><span class="icon icon-noteItemMore" id="moreNoteItem5"></span></div>
+                <div class="content-dropdown dropdown-moreNoteItem">
+                    <div><span class="icon more-delete"></span> Delete</div>
+                    <div><span class="icon more-export"></span> Export</div>
+                    <div><span class="icon more-details"></span> Details</div>
+                </div>
                 <div class="note-short-body">Here goes the content</div>
                 <div class="note-short-updated">Today 4:15pm</div>
             </div>
-            <div class="note-item">
+            <div class="note-item noteItem6">
                 <div class="note-short-title"><span class="icon icon-note-item"><span class="circle circle-gray"></span></span>Just a Note</div>
-                <div class="note-btn-more"></div>
-                <div class="note-short-body">Here goes the content</div>
-                <div class="note-short-updated">Today 4:15pm</div>
-            </div>
-            <div class="note-item">
-                <div class="note-short-title"><span class="icon icon-note-item"><span class="circle circle-gray"></span></span>Just a Note</div>
-                <div class="note-btn-more"></div>
+                <div class="btn btnMoreNoteItem"><span class="icon icon-noteItemMore" id="moreNoteItem6"></span></div>
+                <div class="content-dropdown dropdown-moreNoteItem">
+                    <div><span class="icon more-delete"></span> Delete</div>
+                    <div><span class="icon more-export"></span> Export</div>
+                    <div><span class="icon more-details"></span> Details</div>
+                </div>
                 <div class="note-short-body">Here goes the content</div>
                 <div class="note-short-updated">Today 4:15pm</div>
             </div>
@@ -109,7 +147,7 @@
             <div class="color-e-title">
                 <div class="color-filter btn" id="color-filter-topbar" onclick="colorFilterTopbar()">
                     <span class="icon"><span class="circle circle-gray"></span></span>
-                    <div class="content-dropdown-colorFilter--top-bar">
+                    <div id="dropdown-colorFilterTopbar" class="content-dropdown">
                         <div class="btn"><span class="icon"><span class="circle circle-red"></span></span></div>
                         <div class="btn"><span class="icon"><span class="circle circle-orange"></span></span></div>
                         <div class="btn"><span class="icon"><span class="circle circle-yellow"></span></span></div>
@@ -124,7 +162,7 @@
             <div class="actions">
                 <div class="toggle-toolbar btn">Toolbar<span class="icon-toggle-toolbar icon"></span></div>
                 <div class="more btn" onclick="openMoreTopbar()"><span id="icon-more-horizontal" class="icon"></span>
-                    <div class="content-dropdown-moreTopbar">
+                    <div id="dropdown-moreTopbar" class="content-dropdown">
                         <div><span class="icon more-delete"></span> Delete</div>
                         <div><span class="icon more-export"></span> Export</div>
                         <div><span class="icon more-details"></span> Details</div>
@@ -139,7 +177,7 @@
                 <span class="gp-formats">
                     <span id="dropdown-fontName">
                         <div id="fontName" onclick="chooseFontName()">teste</div>
-                        <div class="content-dropdown-fontName">
+                        <div id="content-dd-fontName" class="content-dropdown">
                             <p id="font-label" disabled>Font Name</p>
                             <div id="font-arial">Arial</div>
                             <div id="font-calibri">Calibri</div>
@@ -161,7 +199,7 @@
                     </span>
                     <span id="dropdown-fontSize">
                         <input type="number" name="" id="fontSize" onclick="chooseFontSize()">
-                        <div class="content-dropdown-fontSize">
+                        <div id="content-dd-fontSize" class="content-dropdown">
                             <p>Size</p>
                             <div>10</div>
                             <div>12</div>
@@ -213,7 +251,7 @@
                     <div class="alignText btn" title="Align Text" onclick="chooseTextAlignment()">
                         <span id="icon-alignText" class="alignText icon"></span>
                         <span id="icon-dropDown" class="alignText icon"></span>
-                        <div class="content-dropdown-alignText">
+                        <div id="dropdown-alignText" class="content-dropdown">
                             <div class="alignLeft btn"><span id="icon-alignLeft" class="icon"></span></div>
                             <div class="alignCenter btn"><span id="icon-alignCenter" class="icon"></span></div>
                             <div class="alignRight btn"><span id="icon-alignRight" class="icon"></span></div>

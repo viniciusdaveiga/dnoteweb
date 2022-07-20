@@ -42,6 +42,14 @@
     background: url(/img/chevron-expand.svg) center no-repeat;
 }
 
+#dropdown-dnoteweb {
+    font-size: 14px;
+    min-width: 19.5rem;
+}
+#dropdown-dnoteweb div {
+    padding: 5px 7px;
+}
+
 #close-sidebar{
     height: 25px;
     width: 25px;
@@ -78,9 +86,10 @@ body.dark .sidebar-top #close-sidebar{
 }
 
 #sidebar .search-box{
-    height: 60px;
+    height: 35px;
     list-style: none;
     display: flex;
+    flex-shrink: 0;
     align-items: center;
     margin: 10px;
     border-radius: 6px;
@@ -122,19 +131,26 @@ body.dark .sidebar-top #close-sidebar{
     background: url(/img/sort-up-alt.svg) center no-repeat;
 }
 
-.content-dropdown-colorFilter--sidebar {
-    display: none;
-    position: fixed;
-    top: 132px;
-    background-color: #f9f9f9;
+#dropdown-colorFilterSidebar {
     min-width: 25px;
-    border-radius: 3px;
-    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-    z-index: 9999;
 }
 
 #icon-filter-settings {
     background: url(/img/sliders.svg) center no-repeat;
+}
+
+#dropdown-fiterSettings {
+    font-size: 14px;
+    min-width: 19.5rem;
+}
+#dropdown-filterSettings div {
+    padding: 5px 7px;
+    cursor: auto;
+}
+
+.btnRadio {
+    margin-right: 5px;
+    cursor: pointer;
 }
 
 /* ======================================== NOTE LIST ======================================== */
@@ -169,23 +185,21 @@ body.dark .sidebar-top #close-sidebar{
     background: #555; 
 }
 
-.note-btn-more {
-    background: url(/img/more-horizontal.svg) center no-repeat;
-    width: 25px;
-    height: 20px;
-    border: none;
-    background-size: contain;
-    padding: 3px;
-    cursor: pointer;
-    background-origin: content-box;
-    border-radius: 3px;
+.btnMoreNoteItem{
     position: absolute;
-    top: 10px;
+    top: 9px;
     right: 10px;
-    background-color: #69fe5c;
 }
-.note-btn-more:hover {
-    background-color: #83b57f;
+.icon-noteItemMore {
+    background: url(/img/more-horizontal.svg) center no-repeat;
+    height: 23px!important;
+}
+.dropdown-moreNoteItem {
+    font-size: 14px;
+    min-width: 100px;
+}
+.dropdown-moreNoteItem div {
+    padding: 5px 7px;
 }
 
 .note-item {

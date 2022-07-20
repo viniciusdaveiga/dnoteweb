@@ -2,8 +2,9 @@ const body = document.querySelector('body'),
       // Sidebar
       sidebar = body.querySelector('#sidebar'),
       closeToggle = body.querySelector(".close-sidebar"),
-      openToggle = body.querySelector(".open-sidebar"),
+      noteList = document.querySelector(".note-list"),
       // Top Bar
+      openToggle = body.querySelector(".open-sidebar"),
       colorAndTitle = body.querySelector(".color-e-title"),
       // Toolbar
       toggleToolbar = body.querySelector('.toggle-toolbar'),
@@ -47,16 +48,6 @@ function sideScroll(element,direction,speed,distance,step){
             window.clearInterval(slideTimer);
         }
     }, speed);
-}
-
-function alignDropdown (target, dropdown) {
-    const targetRect = target.getBoundingClientRect();
-    const dropdownRect = dropdown.getBoundingClientRect();
-
-    // const left = targetRect.left + targetRect.width / 2 - dropdownRect.width / 2;
-    const left = targetRect.left + targetRect.width - dropdownRect.width;
-
-    dropdown.style.left = `${left}px`;
 }
 
 closeToggle.addEventListener("click" , () =>{
@@ -110,78 +101,160 @@ toggleToolbar.addEventListener("click" , () =>{
     }
 })
 
+// ==================== DROPDOWNS ====================
+function alignDropdown (target, dropdown) {
+    const targetRect = target.getBoundingClientRect();
+    const dropdownRect = dropdown.getBoundingClientRect();
+    // const left = targetRect.left + targetRect.width / 2 - dropdownRect.width / 2;
+    const top = targetRect.top + targetRect.height;
+    const left = targetRect.left + targetRect.width - dropdownRect.width;
+    dropdown.style.top = `${top + 5}px`;
+    dropdown.style.left = `${left}px`;
+}
+
+function openDnotewebMenu() {
+    const target = document.querySelector(".sidebar-top");
+    const contentDropdown = document.querySelector("#dropdown-dnoteweb");
+    contentDropdown.classList.toggle("show-dropdown");
+    alignDropdown(target,contentDropdown);
+}
+
 function colorFilterSidebar() {
-    document.querySelector(".content-dropdown-colorFilter--sidebar").classList.toggle("show-dropdown-colorFilter");
+    const target = document.querySelector("#color-filter-sidebar");
+    const contentDropdown = document.querySelector("#dropdown-colorFilterSidebar");
+    contentDropdown.classList.toggle("show-dropdown");
+    alignDropdown(target,contentDropdown);
 }
 
-function chooseFontSize() {
-    const fontSize = document.querySelector("#fontSize");
-    const contentDropdownFontSize = document.querySelector(".content-dropdown-fontSize");
-    contentDropdownFontSize.classList.toggle("show-dropdown-fontSize");
-    alignDropdown(fontSize,contentDropdownFontSize);
+function filterSettings(){
+    const target = document.querySelector(".filter-settings");
+    const contentDropdown = document.querySelector("#dropdown-filterSettings");
+    contentDropdown.classList.toggle("show-dropdown");
+    alignDropdown(target,contentDropdown);
 }
 
-function openMoreTopbar() {
-    const moreTopbar = document.querySelector(".more");
-    const contentDropdownMoreTopbar = document.querySelector(".content-dropdown-moreTopbar");
-    contentDropdownMoreTopbar.classList.toggle("show-dropdown-moreTopbar");
-    alignDropdown(moreTopbar,contentDropdownMoreTopbar);
-}
+const wrapper = document.querySelector('.note-list');
+wrapper.addEventListener('click', (event) => {
+    const isButton = event.target.classList.contains("icon-noteItemMore");
+    if (!isButton) {
+    return;
+    }
 
-function chooseTextAlignment() {
-    const alignText = document.querySelector(".alignText");
-    const contentDropdownAlignText = document.querySelector(".content-dropdown-alignText");
-    contentDropdownAlignText.classList.toggle("show-dropdown-alignText");
-    alignDropdown(alignText,contentDropdownAlignText);
+    moreNoteItem(event.target.id)
+    console.log(event.target.id);
+})
+function moreNoteItem(a) {
+    const target = document.querySelector(`#${a}`);
+    console.log(target)
+    const contentDropdown = document.querySelector(".dropdown-moreNoteItem");
+    contentDropdown.classList.toggle("show-dropdown");
+    alignDropdown(target,contentDropdown);
 }
-
-function chooseFontName() {
-    const fontName = document.querySelector("#fontName");
-    const contentDropdownFontName = document.querySelector(".content-dropdown-fontName");
-    contentDropdownFontName.classList.toggle("show-dropdown-fontName");
-    alignDropdown(fontName,contentDropdownFontName);
-}
-
 function colorFilterTopbar() {
-    document.querySelector(".content-dropdown-colorFilter--top-bar").classList.toggle("show-dropdown-colorFilter");
+    const target = document.querySelector("#color-filter-topbar");
+    const contentDropdown = document.querySelector("#dropdown-colorFilterTopbar");
+    contentDropdown.classList.toggle("show-dropdown");
+    alignDropdown(target,contentDropdown);
+}
+function openMoreTopbar() {
+    const target = document.querySelector(".more");
+    const contentDropdown = document.querySelector("#dropdown-moreTopbar");
+    contentDropdown.classList.toggle("show-dropdown");
+    alignDropdown(target,contentDropdown);
+}
+function chooseFontName() {
+    const target = document.querySelector("#fontName");
+    const contentDropdown = document.querySelector("#content-dd-fontName");
+    contentDropdown.classList.toggle("show-dropdown");
+    alignDropdown(target,contentDropdown);
+}
+function chooseFontSize() {
+    const target = document.querySelector("#fontSize");
+    const contentDropdown = document.querySelector("#content-dd-fontSize");
+    contentDropdown.classList.toggle("show-dropdown");
+    alignDropdown(target,contentDropdown);
+}
+function chooseTextAlignment() {
+    const target = document.querySelector(".alignText");
+    const contentDropdown = document.querySelector("#dropdown-alignText");
+    contentDropdown.classList.toggle("show-dropdown");
+    alignDropdown(target,contentDropdown);
 }
 
 // Close the dropdown if the user clicks outside of it
 window.onclick = function(e) {
-    if (!e.target.matches('#fontSize')) {
-        const myDropdown = document.querySelector(".content-dropdown-fontSize");
-        if (myDropdown.classList.contains('show-dropdown-fontSize')) {
-            myDropdown.classList.remove('show-dropdown-fontSize');
-        }
-    }
-    if (!e.target.matches('#fontName')) {
-        const myDropdown = document.querySelector(".content-dropdown-fontName");
-        if (myDropdown.classList.contains('show-dropdown-fontName')) {
-            myDropdown.classList.remove('show-dropdown-fontName');
-        }
-    }
-    if (!e.target.matches('.alignText')) {
-        const myDropdown = document.querySelector(".content-dropdown-alignText");
-        if (myDropdown.classList.contains('show-dropdown-alignText')) {
-            myDropdown.classList.remove('show-dropdown-alignText');
-        }
-    }
-    if (!e.target.matches('.more .icon, .more')) {
-        const myDropdown = document.querySelector(".content-dropdown-moreTopbar");
-        if (myDropdown.classList.contains('show-dropdown-moreTopbar')) {
-            myDropdown.classList.remove('show-dropdown-moreTopbar');
+    if (!e.target.matches('.sidebar-top, .logo-text, .logo-text .icon')) {
+        const myDropdown = document.querySelector("#dropdown-dnoteweb");
+        if (myDropdown.classList.contains('show-dropdown')) {
+            myDropdown.classList.remove('show-dropdown');
         }
     }
     if (!e.target.matches('#color-filter-sidebar .icon, #color-filter-sidebar .circle')) {
-        const myDropdown = document.querySelector(".content-dropdown-colorFilter--sidebar");
-        if (myDropdown.classList.contains('show-dropdown-colorFilter')) {
-            myDropdown.classList.remove('show-dropdown-colorFilter');
+        const myDropdown = document.querySelector("#dropdown-colorFilterSidebar");
+        if (myDropdown.classList.contains('show-dropdown')) {
+            myDropdown.classList.remove('show-dropdown');
+        }
+    }
+    if (!e.target.matches('.filter-settings .btn, #icon-filter-settings')) {
+        const myDropdown = document.querySelector("#dropdown-filterSettings");
+        if (myDropdown.classList.contains('show-dropdown')) {
+            myDropdown.classList.remove('show-dropdown');
+        }
+    }
+    if (!e.target.matches('.btnMoreNoteItem .icon-noteItemMore, .dropdown-moreNoteItem')) {
+        const myDropdown = document.querySelector(".dropdown-moreNoteItem");
+        if (myDropdown.classList.contains('show-dropdown')) {
+            myDropdown.classList.remove('show-dropdown');
         }
     }
     if (!e.target.matches('#color-filter-topbar .icon, #color-filter-topbar .circle')) {
-        const myDropdown = document.querySelector(".content-dropdown-colorFilter--top-bar");
-        if (myDropdown.classList.contains('show-dropdown-colorFilter')) {
-            myDropdown.classList.remove('show-dropdown-colorFilter');
+        const myDropdown = document.querySelector("#dropdown-colorFilterTopbar");
+        if (myDropdown.classList.contains('show-dropdown')) {
+            myDropdown.classList.remove('show-dropdown');
         }
+    }
+    if (!e.target.matches('.more .icon, .more')) {
+        const myDropdown = document.querySelector("#dropdown-moreTopbar");
+        if (myDropdown.classList.contains('show-dropdown')) {
+            myDropdown.classList.remove('show-dropdown');
+        }
+    }
+    if (!e.target.matches('#fontName')) {
+        const myDropdown = document.querySelector("#content-dd-fontName");
+        if (myDropdown.classList.contains('show-dropdown')) {
+            myDropdown.classList.remove('show-dropdown');
+        }
+    }
+    if (!e.target.matches('#fontSize')) {
+        const myDropdown = document.querySelector("#content-dd-fontSize");
+        if (myDropdown.classList.contains('show-dropdown')) {
+            myDropdown.classList.remove('show-dropdown');
+        }
+    }
+    if (!e.target.matches('.alignText')) {
+        const myDropdown = document.querySelector("#dropdown-alignText");
+        if (myDropdown.classList.contains('show-dropdown')) {
+            myDropdown.classList.remove('show-dropdown');
+        }
+    }
+}
+
+// Close the dropdown if the user scroll the noteList
+noteList.onscroll = function(e) {
+    const dnotewebMenu = document.querySelector("#dropdown-dnoteweb");
+    if (dnotewebMenu.classList.contains('show-dropdown')) {
+        dnotewebMenu.classList.remove('show-dropdown');
+    }
+    const colorFilterSidebar = document.querySelector("#dropdown-colorFilterSidebar");
+    if (colorFilterSidebar.classList.contains('show-dropdown')) {
+        colorFilterSidebar.classList.remove('show-dropdown');
+    }
+    const filterSettings = document.querySelector("#dropdown-filterSettings");
+    if (filterSettings.classList.contains('show-dropdown')) {
+        filterSettings.classList.remove('show-dropdown');
+    }
+    const moreNoteItem = document.querySelector(".dropdown-moreNoteItem");
+    if (moreNoteItem.classList.contains('show-dropdown')) {
+        moreNoteItem.classList.remove('show-dropdown');
     }
 }
