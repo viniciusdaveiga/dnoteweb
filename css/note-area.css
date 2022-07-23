@@ -27,6 +27,7 @@
     padding-right: calc(96px + env(safe-area-inset-right));
     margin: auto;
     max-width: 1024px;
+    color: var(--color-text_note);
 }
 .editable-box:focus{
     outline: none;

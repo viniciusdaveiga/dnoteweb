@@ -9,10 +9,9 @@
     position: sticky;
     top: 0;
     padding: 0 10px;
-    background-color: var(--sidebar-color);
-    /* box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.1), 0 6px 20px 0 rgba(0, 0, 0, 0.19); */
+    background-color: var(--color-bg-bar);
     z-index: 101;
-    border-bottom: solid 1px rgb(1, 1, 1, 0.2);
+    border-bottom: solid 1px var(--color-border);
 }
 
 .open-sidebar {
@@ -27,11 +26,14 @@
     border-radius: 3px;
 }
 .open-sidebar:hover {
-    background-color: #ddd;
+    background-color: var(--color-sidebar_hover);
+}
+.open-sidebar svg {
+    stroke: var(--color-text_secondary);
 }
 
 .color-e-title {
-    transition: var(--tran-03);
+    transition: var(--tran-02);
     margin-left: 260px;
     display: flex;
     padding: 15px 5px;
@@ -48,6 +50,8 @@
     width: 50%;
     font-size: 20px;
     margin-left: 10px;
+    background-color: var(--color-bg-bar);
+    color: var(--color-text_primary);
 }
 
 .actions {
@@ -122,14 +126,13 @@
     scrollbar-width: none; /* Firefox */
 }
 .top-toolbar {
-    transition: var(--tran-03);
-    border-bottom: solid 1px rgb(1, 1, 1, 0.2);
+    transition: var(--tran-02);
+    border-bottom: solid 1px var(--color-border);
     display: flex;
     width: 100%;
     height: 40px;
     position: relative;
-    background-color: var(--sidebar-color);
-    /* box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.1), 0 6px 20px 0 rgba(0, 0, 0, 0.19); */
+    background-color: var(--color-bg-bar);
     z-index: 100;
     padding-right: 10px;
     flex-direction: column;
@@ -150,14 +153,14 @@
     justify-content: center;
     align-items: center;
     height: 100%;
-    transition: var(--tran-03);
+    transition: var(--tran-02);
 }
 
 #scroll-toolbar{
     margin: 0 5px;
 }
 #scroll-left:hover, #scroll-right:hover {
-    background-color: rgb(134, 134, 134);
+    background-color: var(--color-btn_hover);
 }
 #scroll-left {
     background: url(/img/toolbar/chevron-compact-left.svg) center no-repeat;
@@ -174,9 +177,9 @@
 }
 #scroll-left, #scroll-right {
     height: 40px!important;
-    width: 18px!important;
+    width: 17px!important;
     padding: 0!important;
-    background-color: #adabab;
+    background-color: var(--color-scroll_btn);
     z-index: 9999;
 }
 
@@ -189,11 +192,13 @@
 #fontName,#fontSize {
     height: 25px;
     border-width: 0px;
-    border: solid 1px rgb(0, 0, 0);
+    border: solid 1px var(--color-text_secondary);
     border-radius: 3px;
     outline: 0;
     cursor: pointer;
     padding: 3px;
+    background-color: var(--color-bg-bar);
+    color: var(--color-text_primary);
 }
 
 #fontName {
@@ -209,7 +214,7 @@
     font-size: 14px;
 }
 #content-dd-fontName p {
-    color: rgb(112, 112, 112);
+    color: var(--color-text_secondary);
     padding: 3px 3px;
     text-decoration: none;
     display: block;
@@ -233,7 +238,7 @@
     min-width: 49px;
 }
 #content-dd-fontSize p {
-    color: rgb(112, 112, 112);
+    color: var(--color-text_secondary);
     padding: 3px 3px;
     text-decoration: none;
     display: block;
@@ -245,7 +250,7 @@
 .toolbar-verticalSeparator{
     margin: 0 0 0 5px;
     height: 20px;
-    border-right: solid 2px #f1f1f1;
+    border-right: solid 2px var(--color-separator);
 }
 
 /* ===== Buttons ===== */

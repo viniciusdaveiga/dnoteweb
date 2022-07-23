@@ -8,8 +8,8 @@
     opacity: 1;
     flex: 1 0 auto;
     box-shadow: 0 4px 6px 0 rgba(0, 0, 0, 0.1), 0 6px 15px 0 rgba(0, 0, 0, 0.19);
-    background: var(--sidebar-color);
-    transition: var(--tran-03);
+    background: var(--color-bg-bar);
+    transition: var(--tran-02);
     z-index: 9999;
 }
 
@@ -27,7 +27,7 @@
 }
 
 #sidebar .sidebar-top:hover{
-    background-color: #555;
+    background-color: var(--color-sidebar_hover);
 }
 
 .logo-text{
@@ -36,6 +36,7 @@
     align-items: center;
     font-family: 'LolliPoptron', Times, serif;
     font-size: 1.3em;
+    color: var(--color-text_primary);
 }
 
 .extra-options {
@@ -53,7 +54,7 @@
 #close-sidebar{
     height: 25px;
     width: 25px;
-    color: var(--toggle-color);
+    color: var(--color-btn_hover);
     border-radius: 5px;
     display: flex;
     align-items: center;
@@ -71,11 +72,11 @@
 }
 
 #close-sidebar:hover{
-    background-color: var(--toggle-color);
+    background-color: var(--color-btn_hover);
 }
 
 body.dark .sidebar-top #close-sidebar{
-    color: var(--text-color);
+    color: var(--color-text_secondary);
 }
 
 /* ======================================== SEARCH BOX ======================================== */
@@ -93,8 +94,8 @@ body.dark .sidebar-top #close-sidebar{
     align-items: center;
     margin: 10px;
     border-radius: 6px;
-    background-color: var(--primary-color-light);
-    transition: var(--tran-03);
+    background-color: var(--color-bg);
+    transition: var(--tran-02);
 }
 
 #sidebar .search-box input{
@@ -102,12 +103,12 @@ body.dark .sidebar-top #close-sidebar{
     width: 100%;
     outline: none;
     border: none;
-    background-color: var(--primary-color-light);
-    color: var(--text-color);
+    background-color: var(--color-bg);
+    color: var(--color-text_primary);
     border-radius: 6px;
     font-size: 17px;
     font-weight: 500;
-    transition: var(--tran-03);
+    transition: var(--tran-02);
 }
 
 /* ======================================== LIST OPTIONS ======================================== */
@@ -116,7 +117,10 @@ body.dark .sidebar-top #close-sidebar{
     justify-content: space-between;
     align-items: center;
     padding: 10px;
-    border-bottom: solid 2px #f0f2fc;
+    border-bottom: solid 2px var(--color-separator);
+}
+.list-options p {
+    color: var(--color-text_secondary);
 }
 
 .list-options-right{
@@ -157,6 +161,7 @@ body.dark .sidebar-top #close-sidebar{
 #sidebar .note-list{
     z-index: 1;
     overflow: hidden auto;
+    color: var(--color-text_primary);
 }
 
 /* width */
@@ -166,23 +171,22 @@ body.dark .sidebar-top #close-sidebar{
   
 /* Track */
 #sidebar .note-list::-webkit-scrollbar-track {
-    background: #f1f1f1; 
+    background: var(--color-scroll_track); 
 }
 
 /* Track on hover */
 #sidebar .note-list::-webkit-scrollbar-track:hover {
-    background: #e2e2e2;
-    border: solid 0.5px #dbd8d8;
+    background: var(--color-scroll_track_hover);
 }
    
 /* Handle */
 #sidebar .note-list::-webkit-scrollbar-thumb {
-    background: #888; 
+    background: var(--color-scroll_thumb); 
 }
   
 /* Handle on hover */
 #sidebar .note-list::-webkit-scrollbar-thumb:hover {
-    background: #555; 
+    background: var(--color-scroll_thumb_hover); 
 }
 
 .btnMoreNoteItem{
@@ -205,10 +209,10 @@ body.dark .sidebar-top #close-sidebar{
 .note-item {
     position: relative;
     cursor: pointer;
-    border-bottom: solid 1px #f0f2fc;
+    border-bottom: solid 1px var(--color-separator);
 }
 .note-item:hover {
-    background-color: rgb(212, 212, 212);
+    background-color: var(--color-note_hover);
 }
 
 .icon-note-item {
@@ -218,7 +222,7 @@ body.dark .sidebar-top #close-sidebar{
 }
 
 .note-item--selected {
-    background: #eeeeee;
+    background: var(--color-note_selected);
     font-weight: bold;
 }
 
@@ -238,7 +242,7 @@ body.dark .sidebar-top #close-sidebar{
 }
 
 .note-short-updated {
-    color: #aaaaaa;
+    color: var(--color-text_secondary);
     font-style: italic;
     justify-content: right;
 }
@@ -264,11 +268,11 @@ body.dark .sidebar-top #close-sidebar{
     padding: 2px 14px;
     width: 100%;
     height: 45px;
-    background-color: #69fe5c;
+    background-color: var(--color-btn_new_note);
     margin-top: auto;
     cursor: pointer;
 }
 
 #sidebar .new-note:hover {
-    background-color: #5fe153;
+    background-color: var(--color-btn_new_note_hover);
 }
