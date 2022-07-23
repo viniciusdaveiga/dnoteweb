@@ -8,7 +8,7 @@
 
     <link rel="stylesheet" href="/css/styles.css">
 </head>
-<body>
+<body class="">
 
     <div id="sidebar">
         <div class="sidebar-top" onclick="openDnotewebMenu()">
@@ -16,7 +16,10 @@
                 <div class="logo-text">dnoteweb<span class="extra-options icon"></span></div>
                 <div id="dropdown-dnoteweb" class="content-dropdown">
                     <div><span class="icon more-export"></span> Export All</div>
-                    <div><span class="icon more-mode"></span> Dark Mode</div>
+                    <div onclick="toggleDarkMode()">
+                        <span class="icon more-mode"></span>
+                        <span class="text-color-mode">Dark Mode</span>
+                    </div>
                     <div><span class="icon more-github"></span> By Vinícius André da Veiga</div>
                 </div>
             </div>

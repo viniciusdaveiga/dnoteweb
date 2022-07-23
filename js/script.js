@@ -269,3 +269,20 @@ function toggleFullScreen(){
         fullscreen.style.background = "url(/img/more/fullscreen.svg) center no-repeat"
     }
 }
+
+function toggleDarkMode(){
+    const body = document.querySelector("body");
+    const textModeColor = document.querySelector('.text-color-mode');
+    let icon = document.querySelector(".more-mode");
+    if (body.classList.contains("dark")) {
+        icon.style.background = "url(/img/dark-mode.svg) center no-repeat"
+        icon.style.backgroundSize = 'contain'
+        body.classList.remove("dark")
+        textModeColor.innerHTML = "Dark Mode"
+    } else {
+        icon.style.background = "url(/img/light-mode.svg) center no-repeat"
+        icon.style.backgroundSize = 'contain'
+        body.classList.add("dark")
+        textModeColor.innerHTML = "Light Mode"
+    }
+}

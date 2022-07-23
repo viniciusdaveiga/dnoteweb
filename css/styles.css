@@ -138,6 +138,9 @@ body.dark{
     padding: 3px;
     filter: var(--color-icon);
 }
+#sidebar #color-filter-sidebar .icon, #top-group #dropdown-colorFilterTopbar .icon {
+    filter:none;
+}
 
 /* ========== DROPDOWNS ========== */
 
