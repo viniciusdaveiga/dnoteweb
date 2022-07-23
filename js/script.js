@@ -260,5 +260,12 @@ noteList.onscroll = function(e) {
 }
 
 function toggleFullScreen(){
-    document.querySelector("body").requestFullscreen();
+    const fullscreen = document.querySelector(".more-fullscreen");
+    if (document.fullscreenElement===null) {
+        document.documentElement.requestFullscreen()
+        fullscreen.style.background = "url(/img/more/fullscreen-exit.svg) center no-repeat"
+    } else {
+        document.exitFullscreen();
+        fullscreen.style.background = "url(/img/more/fullscreen.svg) center no-repeat"
+    }
 }
