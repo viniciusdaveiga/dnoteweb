@@ -258,3 +258,7 @@ noteList.onscroll = function(e) {
         moreNoteItem.classList.remove('show-dropdown');
     }
 }
+
+function toggleFullScreen(){
+    document.querySelector("body").requestFullscreen();
+}

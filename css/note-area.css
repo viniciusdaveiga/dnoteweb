@@ -14,6 +14,7 @@
     height: calc(-85px + 100vh);
     max-height: 100%;
     overflow: hidden auto;
+    background-color: var(--color-bg);
 }
 
 .editable-box {
@@ -28,6 +29,7 @@
     margin: auto;
     max-width: 1024px;
     color: var(--color-text_note);
+    background-color: var(--color-bg);
 }
 .editable-box:focus{
     outline: none;
