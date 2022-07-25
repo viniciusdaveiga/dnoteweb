@@ -228,9 +228,7 @@
                     <div class="eraser btn" onclick="actionCommand('removeFormat');"><span id="icon-eraser" class="icon"></span></div>
                 </span>
                 <span class="toolbar-verticalSeparator"></span>
-                <span class="gp-formats">
-                    <div class="quote btn" onclick="blockquote()"><span id="icon-quote" class="icon"></span></div>
-                </span>
+                <div class="hr btn" onclick="actionCommand('insertHorizontalRule');"><span id="icon-hr" class="icon"></span></div>
                 <span class="toolbar-verticalSeparator"></span>
                 <span class="gp-formats">
                     <div class="colorText btn">
@@ -248,32 +246,33 @@
                 <span class="gp-formats">
                     <div class="unorderedList btn" onclick="actionCommand('insertUnorderedList');"><span id="icon-unorderedList" class="icon"></span></div>
                     <div class="orderedList btn" onclick="actionCommand('insertOrderedList');"><span id="icon-orderedList" class="icon"></span></div>
-                    <div class="indentRight btn" onclick="actionCommand('indent');"><span id="icon-indentRight" class="icon"></span></div>
+                    <div class="indentRight btn" onclick="actionCommand('outdent');"><span id="icon-indentRight" class="icon"></span></div>
                     <div class="indentLeft btn" onclick="actionCommand('indent');"><span id="icon-indentLeft" class="icon"></span></div>
                     <div class="alignText btn" title="Align Text" onclick="chooseTextAlignment()">
                         <span id="icon-alignText" class="alignText icon"></span>
                         <span id="icon-dropDown" class="alignText icon"></span>
                         <div id="dropdown-alignText" class="content-dropdown">
-                            <div class="alignLeft btn"><span id="icon-alignLeft" class="icon"></span></div>
-                            <div class="alignCenter btn"><span id="icon-alignCenter" class="icon"></span></div>
-                            <div class="alignRight btn"><span id="icon-alignRight" class="icon"></span></div>
-                            <div class="justify btn"><span id="icon-justify" class="icon"></span></div>
+                            <div class="alignLeft btn" onclick="actionCommand('justifyleft');"><span id="icon-alignLeft" class="icon"></span></div>
+                            <div class="alignCenter btn" onclick="actionCommand('justifycenter');"><span id="icon-alignCenter" class="icon"></span></div>
+                            <div class="alignRight btn" onclick="actionCommand('justifyright');"><span id="icon-alignRight" class="icon"></span></div>
+                            <div class="justify btn" onclick="actionCommand('justifyFull');"><span id="icon-justify" class="icon"></span></div>
                         </div>
-                    </div> 
+                    </div>
                 </span>
                 <span class="toolbar-verticalSeparator"></span>
                 <span class="gp-formats">
-                    <div class="link btn"><span id="icon-link" class="icon"></span></div>
-                    <div class="addPhoto btn"><span id="icon-addPhoto" class="icon"></span></div>
+                    <div class="link btn" onclick="actionComArg('createLink', prompt('Enter a URL', 'http://'));"><span id="icon-link" class="icon"></span></div>
+                    <label for="imageUpload" class="addPhoto btn"><span id="icon-addPhoto" class="icon"></span></label>
+                    <input type="file" name="imageUpload" id="imageUpload">
                 </span>
                 <span class="toolbar-verticalSeparator"></span>
                 <span class="gp-formats">
-                    <div class="code btn"><span id="icon-code" class="icon"></span></div>
+                    <div class="code btn" onclick="toggleCode(this.id);"><span id="icon-code" class="icon"></span></div>
                 </span>
                 <span class="toolbar-verticalSeparator"></span>
                 <span class="gp-formats">
-                    <div class="returnLeft btn"><span id="icon-returnLeft" class="icon"></span></div>
-                    <div class="returnRight btn"><span id="icon-returnRight" class="icon"></span></div>
+                    <div class="returnLeft btn" onclick="actionCommand('undo');"><span id="icon-returnLeft" class="icon"></span></div>
+                    <div class="returnRight btn" onclick="actionCommand('redo');"><span id="icon-returnRight" class="icon"></span></div>
                 </span>
             </div>
             <div id="scroll-toolbar" class="btn"><span id="scroll-right" class="icon"></span></div>

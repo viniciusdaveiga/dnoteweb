@@ -34,6 +34,15 @@
     outline: none;
 }
 
+hr {
+    margin: 20px 0;
+}
+
+.editable-box img {
+    margin-top: 10px;
+    max-width: 100%;
+}
+
 @media only screen and (max-width: 600px){
 	.editable-box{
         padding: 4vh;

@@ -149,7 +149,7 @@
     display: flex;
     margin-right: 10px;
     margin-left: 300px;
-    width: 950px;
+    width: 910px;
     justify-content: center;
     align-items: center;
     height: 100%;
@@ -275,8 +275,8 @@
 #icon-eraser {
     background: url(/img/toolbar/eraser.svg) center no-repeat;
 }
-#icon-quote {
-    background: url(/img/toolbar/quote.svg) center no-repeat;
+#icon-hr {
+    background: url(/img/toolbar/horizontal-rule.svg) center no-repeat;
 }
 #icon-colorText {
     /* background: url(/img/toolbar/color-text.svg) center no-repeat; */
@@ -331,6 +331,9 @@
 }
 #icon-link {
     background: url(/img/toolbar/link-45deg.svg) center no-repeat;
+}
+input[type="file"] {
+    display: none;
 }
 #icon-addPhoto {
     background: url(/img/toolbar/add-photo.svg) center no-repeat;
