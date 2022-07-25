@@ -127,6 +127,10 @@ body.dark{
     background-color: var(--color-btn_hover);
 }
 
+.active {
+    background-color: var(--color-btn_hover);
+}
+
 #sidebar .icon, #top-group .icon {
     display: inline-flex;
     justify-content: center;
