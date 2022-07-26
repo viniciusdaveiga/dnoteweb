@@ -4,7 +4,7 @@ function actionCommand(command) {
   document.execCommand(command, false, null);
 }
 function actionComArg(command, arg) {
-  document.execCommand(command, false, arg);
+  document.execCommand(command, false, arg);      
 }
 
 const inputFile = document.getElementById('imageUpload');
@@ -21,46 +21,58 @@ inputFile.onchange = function () {
   console.log(url)
   actionComArg('insertImage',url)
 }
-var showingSouceCode = false;
-function toggleCode(buttonId) {
-  if (buttonId) {
-    buttonClicked(buttonId);
+
+let showingSourceCode = false;
+function toggleCode(identifier) {
+  if (identifier) {
+    buttonClicked(identifier);
   }
-  if (showingSouceCode) {
+  if (showingSourceCode == true) {
     editor.innerHTML = editor.textContent;
-    showingSouceCode = false;
+    showingSourceCode = false;
+    editor.style.fontFamily = "";
   } else {
     editor.textContent = editor.innerHTML;
-    showingSouceCode = true;
+    showingSourceCode = true;
+    editor.style.fontFamily = "monospace";
   }
 }
 
-function blockquote() {
-  const element = document.createElement("blockquote");
-  action(element)
-}
-function action(element) {
-  let userSelectionArea = window.getSelection().anchorNode.parentElement.className
-  const userSelection = window.getSelection();
-  const selectedTextRange = userSelection.getRangeAt(0);
-
-  if (userSelectionArea == "editable-box"){
-    selectedTextRange.surroundContents(element);
+function addLink(){
+  const btn = document.querySelector(".link")
+  if (btn.classList.contains("active")){
+    actionComArg('unlink', null)
+  } else {
+    actionComArg('createLink', prompt('Enter a URL', 'http://'))
   }
+}
+
+function chooseColor(command, value, identifier){
+  if (identifier == "inputColorText") {
+    document.getElementById("recColorText").style.backgroundColor = value;
+  } else {
+    document.getElementById("recColorFill").style.backgroundColor = value;
+  }
+  actionComArg(command, value)
 }
 
 document.onselectionchange = () => {
-  const btnBold = document.querySelector('.bold');
-  const btnItalic = document.querySelector('.italic');
-  const btnUnder = document.querySelector('.underline');
-  const btnStrike = document.querySelector('.strikethrough');
-  const btnSup = document.querySelector('.superscript');
-  const btnSub = document.querySelector('.subscript');
+  const btnBold = document.querySelector('.bold'),
+        btnItalic = document.querySelector('.italic'),
+        btnUnder = document.querySelector('.underline'),
+        btnStrike = document.querySelector('.strikethrough'),
+        btnSup = document.querySelector('.superscript'),
+        btnSub = document.querySelector('.subscript'),
+        btnUList = document.querySelector('.unorderedList'),
+        btnOList = document.querySelector('.orderedList'),
+        btnLink = document.querySelector('.link'),
 
-  const btnQuote = document.querySelector('.quote');
+        btnTextColor = document.querySelector('#recColorText'),
+        btnFillColor = document.querySelector('#recColorFill');
 
-  const testAll = [btnBold, btnItalic, btnUnder, btnStrike, btnSup, btnSub, btnQuote]
-  const tags = ['B', 'I', 'U', 'STRIKE', 'SUP', 'SUB', 'BLOCKQUOTE']
+
+  const testAll = [btnBold, btnItalic, btnUnder, btnStrike, btnSup, btnSub, btnUList, btnOList, btnLink]
+  const tags = ['B', 'I', 'U', 'STRIKE', 'SUP', 'SUB', 'UL', 'OL', 'A']
 	if (editor === document.activeElement){
     let i = 0
     let n = 0
@@ -80,7 +92,7 @@ function isSelectionInTag(tag) {
 	let currentNode = window.getSelection().focusNode;
 	while (currentNode.className !== 'editable-box'){
 		if (currentNode.tagName === tag) return true;
-		currentNode = currentNode.parentNode;		
+		currentNode = currentNode.parentNode;
 	}
 	return false;
 }

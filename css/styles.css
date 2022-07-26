@@ -142,8 +142,9 @@ body.dark{
     padding: 3px;
     filter: var(--color-icon);
 }
-#sidebar #color-filter-sidebar .icon, #top-group #dropdown-colorFilterTopbar .icon {
-    filter:none;
+#sidebar #color-filter-sidebar .icon, 
+#top-group #dropdown-colorFilterTopbar .icon{
+    filter: none!important;
 }
 
 /* ========== DROPDOWNS ========== */
@@ -227,4 +228,10 @@ input[type=text] {
     border-width: 0px;
     border: none;
     outline: 0;
+}
+
+input[type="color"] {
+	-webkit-appearance: none;
+	border: none;
+	display: none;
 }

@@ -278,15 +278,42 @@
 #icon-hr {
     background: url(/img/toolbar/horizontal-rule.svg) center no-repeat;
 }
+#top-group .icon-color {
+    display: inline-flex;
+    justify-content: center;
+    text-align: center;
+    background-size: contain;
+    background-origin: content-box;
+    width: 25px;
+    height: 25px;
+    padding: 3px;
+}
+#top-group .icon-color svg {
+    filter: var(--color-icon);
+}
+#recColorText{
+    width: 100%;
+    height: 50%;
+    background-color: var(--color-btn_hover);
+}
+#recColorFill{
+    width: 100%;
+    height: 50%;
+    background-color: var(--color-btn_hover);
+}
 #icon-colorText {
     /* background: url(/img/toolbar/color-text.svg) center no-repeat; */
     align-items: center;
     justify-content: center;
+    display: flex;
+    flex-direction: column;
 }
 #icon-colorFill {
     /* background: url(/img/toolbar/color-fill.svg) center no-repeat; */
     align-items: center;
     justify-content: center;
+    display: flex;
+    flex-direction: column;
 }
 #icon-unorderedList {
     background: url(/img/toolbar/list-unordered.svg) center no-repeat;
