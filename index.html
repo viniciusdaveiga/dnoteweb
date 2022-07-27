@@ -179,42 +179,49 @@
                 <div id="scroll-toolbar" class="btn"><span id="scroll-left" class="icon"></span></div>
                 <span class="gp-formats">
                     <span id="dropdown-fontName">
-                        <div id="fontName" onclick="chooseFontName()">teste</div>
+                        <div id="fontName" onclick="chooseFontName()">Arial</div>
                         <div id="content-dd-fontName" class="content-dropdown">
                             <p id="font-label" disabled>Font Name</p>
-                            <div id="font-arial">Arial</div>
-                            <div id="font-calibri">Calibri</div>
-                            <div id="font-cambria">Cambria</div>
-                            <div id="font-courier">Courier New</div>
-                            <div id="font-cursive">Cursive</div>
-                            <div id="font-georgia">Georgia</div>
-                            <div id="font-helvetica">Helvetica</div>
-                            <div id="font-inter">Inter</div>
-                            <div id="font-poppins" selected>Poppins</div>
-                            <div id="font-roboto">Roboto</div>
-                            <div id="font-sans">Sans-serif</div>
-                            <div id="font-segoe">Segoe UI</div>
-                            <div id="font-tahoma">Tahoma</div>
-                            <div id="font-times">Times New Roman</div>
-                            <div id="font-trebuchet">Trebuchet MS</div>
-                            <div id="font-verdana">Verdana</div>
+                            <div onclick="changeFontName(this.id)" id="font-arial">Arial</div>
+                            <div onclick="changeFontName(this.id)" id="font-calibri">Calibri</div>
+                            <div onclick="changeFontName(this.id)" id="font-cambria">Cambria</div>
+                            <div onclick="changeFontName(this.id)" id="font-courier">Courier New</div>
+                            <div onclick="changeFontName(this.id)" id="font-cursive">Cursive</div>
+                            <div onclick="changeFontName(this.id)" id="font-georgia">Georgia</div>
+                            <div onclick="changeFontName(this.id)" id="font-helvetica">Helvetica</div>
+                            <div onclick="changeFontName(this.id)" id="font-impact">Impact</div>
+                            <div onclick="changeFontName(this.id)" id="font-inter">Inter</div>
+                            <div onclick="changeFontName(this.id)" id="font-poppins">Poppins</div>
+                            <div onclick="changeFontName(this.id)" id="font-roboto">Roboto</div>
+                            <div onclick="changeFontName(this.id)" id="font-sans">Sans-serif</div>
+                            <div onclick="changeFontName(this.id)" id="font-segoe">Segoe UI</div>
+                            <div onclick="changeFontName(this.id)" id="font-tahoma">Tahoma</div>
+                            <div onclick="changeFontName(this.id)" id="font-times">Times New Roman</div>
+                            <div onclick="changeFontName(this.id)" id="font-trebuchet">Trebuchet MS</div>
+                            <div onclick="changeFontName(this.id)" id="font-verdana">Verdana</div>
                         </div>
                     </span>
                     <span id="dropdown-fontSize">
-                        <input type="number" name="" id="fontSize" onclick="chooseFontSize()">
+                        <div id="fontSize" onclick="chooseFontSize()">
+                            <span id="spanFontSize">16</span>
+                            <span id="fontSizeGroup">
+                                <div id="fontSizeUp"></div>
+                                <div id="fontSizeDown"></div>
+                            </span>
+                        </div>
                         <div id="content-dd-fontSize" class="content-dropdown">
                             <p>Size</p>
-                            <div>10</div>
-                            <div>12</div>
-                            <div>14</div>
-                            <div>16</div>
-                            <div>18</div>
-                            <div>20</div>
-                            <div>22</div>
-                            <div>24</div>
-                            <div>26</div>
-                            <div>28</div>
-                            <div>30</div>
+                            <div onclick="changeFontSize(this)">10</div>
+                            <div onclick="changeFontSize(this)">12</div>
+                            <div onclick="changeFontSize(this)">14</div>
+                            <div onclick="changeFontSize(this)">16</div>
+                            <div onclick="changeFontSize(this)">18</div>
+                            <div onclick="changeFontSize(this)">20</div>
+                            <div onclick="changeFontSize(this)">22</div>
+                            <div onclick="changeFontSize(this)">24</div>
+                            <div onclick="changeFontSize(this)">26</div>
+                            <div onclick="changeFontSize(this)">28</div>
+                            <div onclick="changeFontSize(this)">30</div>
                         </div>
                     </span>
                 </span>

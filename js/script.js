@@ -2,15 +2,15 @@ const body = document.querySelector('body'),
       // Sidebar
       sidebar = body.querySelector('#sidebar'),
       closeToggle = body.querySelector(".close-sidebar"),
-      noteList = document.querySelector(".note-list"),
+      noteList = body.querySelector(".note-list"),
       // Top Bar
       openToggle = body.querySelector(".open-sidebar"),
       colorAndTitle = body.querySelector(".color-e-title"),
       // Toolbar
       toggleToolbar = body.querySelector('.toggle-toolbar'),
       toolbar = body.querySelector('.top-toolbar'),
-      btnScrollR = document.querySelector('#scroll-right');
-      btnScrollL = document.querySelector('#scroll-left');
+      btnScrollR = body.querySelector('#scroll-right');
+      btnScrollL = body.querySelector('#scroll-left');
       toolbarGroup = body.querySelector('.toolbar-group'),
       // Note Area
       noteArea = body.querySelector('.note-area');

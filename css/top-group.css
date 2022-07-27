@@ -197,26 +197,29 @@
     outline: 0;
     cursor: pointer;
     padding: 3px;
+    display: flex;
+    align-items: center;
+    font-size: 14px;
     background-color: var(--color-bg-bar);
     color: var(--color-text_primary);
+    -moz-user-select: none;
+        -webkit-user-select: none;
+        -ms-user-select:none;
+        user-select:none;
+        -o-user-select:none;
 }
 
 #fontName {
-    width: 143px;
+    width: 125px;
     margin-right: 5px;
 }
-#dropdown-fontName {
-    position: relative;
-    display: block;
-}
 #content-dd-fontName {
-    min-width: 143px;
+    min-width: 125px;
     font-size: 14px;
 }
 #content-dd-fontName p {
     color: var(--color-text_secondary);
     padding: 3px 3px;
-    text-decoration: none;
     display: block;
 }
 #content-dd-fontName div {
@@ -226,12 +229,27 @@
 #fontSize {
     width: 49px;
 }
+#fontSizeGroup {
+    display: flex;
+    flex-shrink: 0;
+    flex-direction: column;
+    height: 100%;
+    width: 10px;
+    border-radius: 3px;
+    margin-left: 5px;
+}
+#fontSizeUp{
+    background-color: blue;
+    width: 20px;
+    height: 30px;
+}
+#fontSizeDown{
+    background-color: red;
+    width: 20px;
+    height: 30px;
+}
 #fontSize:focus{
     outline: none;
-}
-#dropdown-fontSize {
-    position: relative;
-    display: block;
 }
 #content-dd-fontSize {
     font-size: 14px;
@@ -240,8 +258,6 @@
 #content-dd-fontSize p {
     color: var(--color-text_secondary);
     padding: 3px 3px;
-    text-decoration: none;
-    display: block;
 }
 #content-dd-fontSize div {
     padding: 3px 3px;
@@ -376,51 +392,54 @@ input[type="file"] {
 }
 
 /* ========== Fonts ========== */
-#font-arial {
+#font-arial, .font-arial {
     font-family: Arial, Helvetica, sans-serif;
 }
-#font-calibri {
+#font-calibri, .font-calibri {
     font-family: Calibri, 'Gill Sans', 'Gill Sans MT', 'Trebuchet MS', sans-serif;
 }
-#font-cambria {
+#font-cambria, .font-cambria {
     font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
 }
-#font-courier {
+#font-courier, .font-courier {
     font-family: 'Courier New', Courier, monospace;
 }
-#font-cursive {
+#font-cursive, .font-cursive {
     font-family: cursive;
 }
-#font-georgia {
+#font-georgia, .font-georgia {
     font-family: Georgia, 'Times New Roman', Times, serif;
 }
-#font-helvetica {
+#font-helvetica, .font-helvetica {
     font-family: Helvetica, sans-serif;
 }
-#font-inter {
+#font-impact, .font-impact {
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+}
+#font-inter, .font-inter {
     font-family: 'Inter', sans-serif;
 }
-#font-poppins {
+#font-poppins, .font-poppins {
     font-family: 'Poppins', sans-serif;
 }
-#font-roboto {
+#font-roboto, .font-roboto {
     font-family: 'Roboto', sans-serif;
 }
-#font-sans {
+#font-sans, .font-sans {
     font-family: sans-serif;
 }
-#font-segoe {
+#font-segoe, .font-segoe {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
-#font-tahoma {
+#font-tahoma, .font-tahoma {
     font-family: Tahoma, Geneva, Verdana, sans-serif;
 }
-#font-times {
+#font-times, .font-times {
     font-family: 'Times New Roman', Times, serif;
 }
-#font-trebuchet {
+#font-trebuchet, .font-trebuchet {
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
 }
-#font-verdana {
+#font-verdana, .font-verdana {
     font-family: Verdana, Geneva, Tahoma, sans-serif;
 }

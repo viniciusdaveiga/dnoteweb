@@ -7,6 +7,25 @@ function actionComArg(command, arg) {
   document.execCommand(command, false, arg);      
 }
 
+function changeFontName(fontNameId){
+  const fontNameArea = document.getElementById("fontName")
+
+  let fontN = document.getElementById(fontNameId).innerHTML
+  fontNameArea.innerHTML = fontN
+  if (fontNameArea.classList !== null){
+    fontNameArea.removeAttribute('class')
+    fontNameArea.classList.add(fontNameId)
+  } else {
+    fontNameArea.classList.add(fontNameId)
+  }
+ 
+  actionComArg('fontName', fontN, null);
+}
+
+function changeFontSize(fontSizeValue){
+  console.log(fontSizeValue.innerHTML)
+}
+
 const inputFile = document.getElementById('imageUpload');
 inputFile.onchange = function () {
   let url = null;
@@ -24,6 +43,7 @@ inputFile.onchange = function () {
 
 let showingSourceCode = false;
 function toggleCode(identifier) {
+  const btn = document.querySelector(".code")
   if (identifier) {
     buttonClicked(identifier);
   }
@@ -31,10 +51,12 @@ function toggleCode(identifier) {
     editor.innerHTML = editor.textContent;
     showingSourceCode = false;
     editor.style.fontFamily = "";
+    btn.classList.remove('active');
   } else {
     editor.textContent = editor.innerHTML;
     showingSourceCode = true;
     editor.style.fontFamily = "monospace";
+    btn.classList.add('active');
   }
 }
 
@@ -65,10 +87,7 @@ document.onselectionchange = () => {
         btnSub = document.querySelector('.subscript'),
         btnUList = document.querySelector('.unorderedList'),
         btnOList = document.querySelector('.orderedList'),
-        btnLink = document.querySelector('.link'),
-
-        btnTextColor = document.querySelector('#recColorText'),
-        btnFillColor = document.querySelector('#recColorFill');
+        btnLink = document.querySelector('.link');
 
 
   const testAll = [btnBold, btnItalic, btnUnder, btnStrike, btnSup, btnSub, btnUList, btnOList, btnLink]

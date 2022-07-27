@@ -156,6 +156,11 @@ body.dark{
     border-radius: 3px;
     box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
     z-index: 9999;
+    -moz-user-select: none;
+        -webkit-user-select: none;
+        -ms-user-select:none;
+        user-select:none;
+        -o-user-select:none;
 }
 .content-dropdown div {
     color: var(--color-text_primary);
@@ -164,11 +169,6 @@ body.dark{
     text-decoration: none;
     cursor: pointer;
     border-radius: 3px;
-    -moz-user-select: none;
-        -webkit-user-select: none;
-        -ms-user-select:none;
-        user-select:none;
-        -o-user-select:none;
 }
 .content-dropdown div:hover {
     background-color: var(--color-btn_hover);
@@ -229,7 +229,6 @@ input[type=text] {
     border: none;
     outline: 0;
 }
-
 input[type="color"] {
 	-webkit-appearance: none;
 	border: none;
