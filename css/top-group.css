@@ -149,7 +149,7 @@
     display: flex;
     margin-right: 10px;
     margin-left: 300px;
-    width: 910px;
+    width: 915px;
     justify-content: center;
     align-items: center;
     height: 100%;
@@ -198,6 +198,7 @@
     cursor: pointer;
     padding: 3px;
     display: flex;
+    justify-content: space-between;
     align-items: center;
     font-size: 14px;
     background-color: var(--color-bg-bar);
@@ -209,12 +210,19 @@
         -o-user-select:none;
 }
 
+#icon-fontSDropdown, #icon-fontNDropdown {
+    background: url(/img/arrow-drop-down.svg) left center no-repeat;
+    padding: 0!important;
+    width: 20px!important;
+    margin: 0!important;
+}
+
 #fontName {
-    width: 125px;
+    width: 140px;
     margin-right: 5px;
 }
 #content-dd-fontName {
-    min-width: 125px;
+    min-width: 140px;
     font-size: 14px;
 }
 #content-dd-fontName p {
@@ -228,28 +236,6 @@
 
 #fontSize {
     width: 49px;
-}
-#fontSizeGroup {
-    display: flex;
-    flex-shrink: 0;
-    flex-direction: column;
-    height: 100%;
-    width: 10px;
-    border-radius: 3px;
-    margin-left: 5px;
-}
-#fontSizeUp{
-    background-color: blue;
-    width: 20px;
-    height: 30px;
-}
-#fontSizeDown{
-    background-color: red;
-    width: 20px;
-    height: 30px;
-}
-#fontSize:focus{
-    outline: none;
 }
 #content-dd-fontSize {
     font-size: 14px;

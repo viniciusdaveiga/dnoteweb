@@ -219,13 +219,13 @@ window.onclick = function(e) {
             myDropdown.classList.remove('show-dropdown');
         }
     }
-    if (!e.target.matches('#fontName')) {
+    if (!e.target.matches('#fontName, #icon-fontNDropdown, #spanFontName')) {
         const myDropdown = document.querySelector("#content-dd-fontName");
         if (myDropdown.classList.contains('show-dropdown')) {
             myDropdown.classList.remove('show-dropdown');
         }
     }
-    if (!e.target.matches('#fontSize')) {
+    if (!e.target.matches('#fontSize, #icon-fontSDropdown, #spanFontSize')) {
         const myDropdown = document.querySelector("#content-dd-fontSize");
         if (myDropdown.classList.contains('show-dropdown')) {
             myDropdown.classList.remove('show-dropdown');

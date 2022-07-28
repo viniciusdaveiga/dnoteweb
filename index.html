@@ -179,7 +179,10 @@
                 <div id="scroll-toolbar" class="btn"><span id="scroll-left" class="icon"></span></div>
                 <span class="gp-formats">
                     <span id="dropdown-fontName">
-                        <div id="fontName" onclick="chooseFontName()">Arial</div>
+                        <div id="fontName" onclick="chooseFontName()">
+                            <span id="spanFontName">Arial</span>
+                            <span id="icon-fontNDropdown" class="icon"></span>
+                        </div>
                         <div id="content-dd-fontName" class="content-dropdown">
                             <p id="font-label" disabled>Font Name</p>
                             <div onclick="changeFontName(this.id)" id="font-arial">Arial</div>
@@ -204,10 +207,7 @@
                     <span id="dropdown-fontSize">
                         <div id="fontSize" onclick="chooseFontSize()">
                             <span id="spanFontSize">16</span>
-                            <span id="fontSizeGroup">
-                                <div id="fontSizeUp"></div>
-                                <div id="fontSizeDown"></div>
-                            </span>
+                            <span id="icon-fontSDropdown" class="icon"></span>
                         </div>
                         <div id="content-dd-fontSize" class="content-dropdown">
                             <p>Size</p>

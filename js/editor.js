@@ -8,7 +8,7 @@ function actionComArg(command, arg) {
 }
 
 function changeFontName(fontNameId){
-  const fontNameArea = document.getElementById("fontName")
+  const fontNameArea = document.getElementById("spanFontName")
 
   let fontN = document.getElementById(fontNameId).innerHTML
   fontNameArea.innerHTML = fontN
@@ -22,8 +22,18 @@ function changeFontName(fontNameId){
   actionComArg('fontName', fontN, null);
 }
 
-function changeFontSize(fontSizeValue){
-  console.log(fontSizeValue.innerHTML)
+function changeFontSize(fontSizeValue) {
+  let fontS = fontSizeValue.innerHTML
+  const fontSLabel = document.getElementById("spanFontSize")
+  fontSLabel.innerHTML = fontS
+  document.execCommand("fontSize", false, "7");
+  const fontElements = document.getElementsByTagName("font");
+  for (let i = 0, len = fontElements.length; i < len; ++i) {
+    if (fontElements[i].size == "7") {
+      fontElements[i].removeAttribute("size");
+      fontElements[i].style.fontSize = `${fontS}px`;
+    }
+  }
 }
 
 const inputFile = document.getElementById('imageUpload');
@@ -88,7 +98,6 @@ document.onselectionchange = () => {
         btnUList = document.querySelector('.unorderedList'),
         btnOList = document.querySelector('.orderedList'),
         btnLink = document.querySelector('.link');
-
 
   const testAll = [btnBold, btnItalic, btnUnder, btnStrike, btnSup, btnSub, btnUList, btnOList, btnLink]
   const tags = ['B', 'I', 'U', 'STRIKE', 'SUP', 'SUB', 'UL', 'OL', 'A']
