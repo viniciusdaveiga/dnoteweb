@@ -113,6 +113,59 @@ document.onselectionchange = () => {
       i++;
       n++;
     }
+
+    if (isSelectionInTag('FONT')){
+      let fontSelection = window.getSelection().focusNode;
+      let fontElements = fontSelection.parentNode
+
+      let spanFName = document.getElementById("spanFontName")
+  
+      let fontS = fontElements.style.fontSize
+      let fontN = fontElements.getAttribute("face")
+
+      
+      while (fontSelection.className !== 'editable-box'){
+        if (fontS !== ''){
+          console.log("1S",fontS)
+          if (fontN !== null){
+            console.log("1N",fontN)
+          } else {
+            while (fontElements.getAttribute("face") == null){
+              fontElements = fontElements.parentNode;
+            }
+            fontN = fontElements.getAttribute("face")
+            console.log('2N',fontN)
+          }
+          return true;
+        } else if (fontN !== null) {
+          console.log("3N",fontN)
+          if (fontS !== ''){
+            console.log('2S',fontS)
+          } else {
+            while (fontElements.style.fontSize == null){
+              fontElements = fontElements.parentNode;
+            }
+            fontS = fontElements.style.fontSize
+            console.log('3S',fontS)
+          }
+          return true;
+        } else {
+          while (fontElements.style.fontSize == ''){
+            fontElements = fontElements.parentNode;
+          }
+          while (fontElements.getAttribute("face") == null){
+            fontElements = fontElements.parentNode;
+          }
+          fontS = fontElements.style.fontSize
+          fontN = fontElements.getAttribute("face")
+          console.log('FINAL',fontS)
+          console.log('FINAL',fontN)
+          console.log("Error")
+          return false;
+        }
+      }
+      
+    }
 	}
 }
 
