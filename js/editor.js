@@ -116,55 +116,47 @@ document.onselectionchange = () => {
 
     if (isSelectionInTag('FONT')){
       let fontSelection = window.getSelection().focusNode;
-      let fontElements = fontSelection.parentNode
+
+      let fontSizeElements = fontSelection.parentNode
+      let fontNameElements = fontSelection.parentNode
 
       let spanFName = document.getElementById("spanFontName")
-  
-      let fontS = fontElements.style.fontSize
-      let fontN = fontElements.getAttribute("face")
-
+      let spanFSize = document.getElementById("spanFontSize")
       
-      while (fontSelection.className !== 'editable-box'){
-        if (fontS !== ''){
-          console.log("1S",fontS)
-          if (fontN !== null){
-            console.log("1N",fontN)
-          } else {
-            while (fontElements.getAttribute("face") == null){
-              fontElements = fontElements.parentNode;
+      findFontSpec();
+
+      function findFontSpec() {
+        let fontS = fontSizeElements.style.fontSize
+        while (fontSizeElements.className !== 'editable-box'){
+          if (fontSizeElements.style.toString() !== ''){
+            if (fontSizeElements.style.fontSize.toString() !== ''){
+              fontS = fontSizeElements.style.fontSize
+              spanFSize.innerHTML = fontS.slice(0, -2)
+              while (fontNameElements.className !== 'editable-box'){
+                if (fontNameElements.getAttribute('face') !== null){
+                  if (fontNameElements.getAttribute('face').toString() !== ''){
+                    let fontN = fontNameElements.getAttribute('face')
+                    spanFName.innerHTML = fontN
+                    spanFName.className = '';
+                    let fontNew = fontN.split(" ")[0].toLowerCase();
+                    spanFName.className = `font-${fontNew}`
+                    return true
+                  }
+                } else if (fontNameElements.style.fontFamily.toString() !== ''){
+                  let fontN = fontNameElements.style.fontFamily
+                  spanFName.innerHTML = fontN.replace(/['"]+/g, '')
+                  spanFName.className = '';
+                  let fontNew = fontN.split(" ")[0].toLowerCase();
+                  spanFName.className = `font-${fontNew.replace(/['"]+/g, '')}`
+                  return true
+                }
+                fontNameElements = fontNameElements.parentNode;
+              }
             }
-            fontN = fontElements.getAttribute("face")
-            console.log('2N',fontN)
           }
-          return true;
-        } else if (fontN !== null) {
-          console.log("3N",fontN)
-          if (fontS !== ''){
-            console.log('2S',fontS)
-          } else {
-            while (fontElements.style.fontSize == null){
-              fontElements = fontElements.parentNode;
-            }
-            fontS = fontElements.style.fontSize
-            console.log('3S',fontS)
-          }
-          return true;
-        } else {
-          while (fontElements.style.fontSize == ''){
-            fontElements = fontElements.parentNode;
-          }
-          while (fontElements.getAttribute("face") == null){
-            fontElements = fontElements.parentNode;
-          }
-          fontS = fontElements.style.fontSize
-          fontN = fontElements.getAttribute("face")
-          console.log('FINAL',fontS)
-          console.log('FINAL',fontN)
-          console.log("Error")
-          return false;
+          fontSizeElements = fontSizeElements.parentNode;
         }
       }
-      
     }
 	}
 }
