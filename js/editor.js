@@ -4,7 +4,18 @@ function actionCommand(command) {
   document.execCommand(command, false, null);
 }
 function actionComArg(command, arg) {
-  document.execCommand(command, false, arg);      
+  if (arg !== "erase"){
+    document.execCommand(command, false, arg);   
+  } else {
+    document.execCommand(command, false, null);
+    const strongElement = document.createElement("font");
+    const userSelection = window.getSelection();
+    strongElement.setAttribute('face', "Arial");
+    strongElement.style.fontFamily = "Arial";
+    strongElement.style.fontSize = "16px";
+    const selectedTextRange = userSelection.getRangeAt(0);
+    selectedTextRange.surroundContents(strongElement);
+  }
 }
 
 function changeFontName(fontNameId){
